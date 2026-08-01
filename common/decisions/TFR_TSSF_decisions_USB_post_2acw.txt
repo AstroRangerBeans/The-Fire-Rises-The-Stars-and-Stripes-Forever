@@ -1,0 +1,8368 @@
+USB_post_second_american_civil_war_category = {
+	USB_reorganize_bureaucracy = {
+		icon = GFX_SOV_decision_SOV_recover_bureaucracy
+		visible = {
+			hidden_trigger = {
+				original_tag = USB
+                has_idea = USB_reorganize_bureaucracy1
+                has_idea = USB_reorganize_bureaucracy2
+                has_idea = USB_reorganize_bureaucracy3
+                has_idea = USB_reorganize_bureaucracy4
+			}
+		}
+		available = {
+			hidden_trigger = {
+			}
+		}
+		days_remove = 70
+		days_re_enable = 0
+		cancel_if_not_visible = yes
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = USB_bureaucracy_cost
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_resistance = -10
+				add_compliance = 25
+			}
+		}
+	}
+	USB_refocus_economy = {
+		icon = GFX_SOV_decision_SOV_recover_economy
+		visible = {
+			hidden_trigger = {
+				tag = USB
+                has_idea = USB_refocus_economy1
+				has_idea = USB_refocus_economy2
+				has_idea = USB_refocus_economy3
+				has_idea = USB_refocus_economy4
+				has_idea = USB_refocus_economy5
+			}
+		}
+		available = {
+			hidden_trigger = {
+			}
+		}
+		days_remove = 75
+		days_re_enable = 0
+		cancel_if_not_visible = yes
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = USB_economy_cost
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			USB_increase_economic_recovery = yes
+		}
+	}
+    USB_recover_army = {
+		icon = GFX_SOV_decision_SOV_recover_army
+		visible = {
+			hidden_trigger = {
+				tag = USB
+				OR = {
+					has_idea = USB_recover_army1
+					has_idea = USB_recover_army2
+					has_idea = USB_recover_army3
+				}
+			}
+		}
+		available = {
+			hidden_trigger = {
+			}
+		}
+		days_remove = 100
+		days_re_enable = 0
+		cancel_if_not_visible = yes
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = USB_army_cost
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			USB_recover_army = yes
+            event = union_post2acw.
+		}
+	}
+	USB_constitutionalize_roe_decision = {
+		icon = APA_neosocialist
+		days_remove = 35
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+			has_government = social_liberal
+		}
+		visible = {
+			has_completed_focus = USB_fixing_the_constitution
+		}
+		modifier = {
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_constitutionalize_roe_decision complete_effect"
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.07
+			}
+			USB_add_support_pro = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_constitutionalize_roe_decision remove_effect"
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_congress_dummy_idea
+					add_idea = USB_constitutionalize_roe_idea
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.03
+			}
+			USB_add_support_neo = yes
+			hidden_effect = {
+				country_event = {
+					id = union_post2acw.34
+				}
+				add_to_variable = {
+					var = USB_politics_personal_expense_factor_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_politics_social_democrat_drift_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_politics_society_development_monthly_dynamic_var
+					value = 0.04
+				}
+				add_to_variable = {
+					var = USB_politics_conservative_drift_dynamic_var
+					value = -0.02
+				}
+			}
+		}
+	}
+	USB_twenty_ninth_amendment_decision = {
+		icon = APA_neosocialist
+		days_remove = 40
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+			NOT = { has_idea = USB_the_right_to_life_idea }
+		}
+		visible = {
+			has_completed_focus = USB_fixing_the_constitution
+		}
+		modifier = {
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_twenty_ninth_amendment_decision complete_effect"
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.05
+			}
+			USB_add_support_pro = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.03
+			}
+			USB_add_support_neo = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = 0.02
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_twenty_ninth_amendment_decision remove_effect"
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_congress_dummy_idea
+					remove_idea = USB_the_right_to_life_idea
+					add_idea = USB_bodily_autonomy_amendment_idea
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = union_post2acw.35
+				}
+				add_to_variable = {
+					var = USB_politics_personal_expense_factor_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_politics_society_development_monthly_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_con_academic_development_monthly_dynamic_var
+					value = 0.04
+				}
+				add_to_variable = {
+					var = USB_con_resistance_decay_dynamic_var
+					value = 0.04
+				}
+				add_to_variable = {
+					var = USB_politics_authoritarian_democrat_drift_dynamic_var
+					value = -0.02
+				}
+				add_to_variable = {
+					var = USB_politics_nationalist_drift_dynamic_var
+					value = -0.03
+				}
+				add_to_variable = {
+					var = USB_politics_fascist_drift_dynamic_var
+					value = -0.04
+				}
+				add_to_variable = {
+					var = USB_politics_communist_drift_dynamic_var
+					value = -0.04
+				}
+			}
+		}
+	}
+	USB_thirtieth_amendment_decision = {
+		icon = APA_neosocialist
+		days_remove = 70
+		cost = 150
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+			NOT = { has_idea = USB_abolish_the_electoral_college }
+		}
+		visible = {
+			has_completed_focus = USB_fixing_the_constitution
+		}
+		available = {
+			set_temp_variable = {
+				    var = USB_support_congress_total_trigger_var_temp
+					value = 0.5
+			}
+			USB_has_congress_support_greater_than = yes
+		}
+		modifier = {
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_thirtieth_amendment_decision complete_effect"
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.06
+			}
+			USB_add_support_pro = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.04
+			}
+			USB_add_support_neo = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = 0.03
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_thirtieth_amendment_decision remove_effect"
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_congress_dummy_idea
+					remove_idea = USB_electoral_college_idea
+					add_idea = USB_abolish_the_electoral_college
+					add_idea = USB_national_popular_vote_idea
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = union_post2acw.36
+				}
+				add_to_variable = {
+					var = USB_politics_personal_expense_factor_dynamic_var
+					value = 0.04
+				}
+				add_to_variable = {
+					var = USB_politics_society_development_monthly_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_con_academic_development_monthly_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = USB_politics_authoritarian_democrat_drift_dynamic_var
+					value = -0.03
+				}
+				add_to_variable = {
+					var = USB_politics_nationalist_drift_dynamic_var
+					value = -0.04
+				}
+				add_to_variable = {
+					var = USB_politics_fascist_drift_dynamic_var
+					value = -0.04
+				}
+				add_to_variable = {
+					var = USB_politics_communist_drift_dynamic_var
+					value = -0.04
+				}
+				add_to_variable = {
+					var = USB_politics_stability_factor_dynamic_var
+					value = 0.05
+				}
+			}
+		}
+	}
+	USB_second_reconstruction_amendments_decision = {
+		icon = APA_neosocialist
+		days_remove = 80
+		cost = 200
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_fixing_the_constitution
+		}
+		available = {
+			set_temp_variable = {
+				    var = USB_support_congress_total_trigger_var_temp
+					value = 0.4
+			}
+			USB_has_congress_support_greater_than = yes
+		}
+		modifier = {
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_second_reconstruction_amendments_decision complete_effect"
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.02
+			}
+			USB_add_support_neo = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_second_reconstruction_amendments_decision remove_effect"
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_congress_dummy_idea
+					add_idea = USB_new_american_democracy_idea
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = union_post2acw.37
+				}
+				add_to_variable = {
+					var = USB_gnd_consumer_goods_factor_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_politics_society_development_monthly_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_politics_stability_factor_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = USB_politics_political_power_gain_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_politics_party_popularity_stability_factor_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_politics_social_democrat_drift_dynamic_var
+					value = 0.03
+				}
+				add_to_variable = {
+					var = USB_politics_social_liberal_drift_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_politics_conservative_drift_dynamic_var
+					value = 0.01
+				}
+			}
+		}
+	}
+}
+USB_post_2acw_insurgency_insurgents_category = {
+	USB_utilize_jayhawker_militia_decision = {
+		icon = APA_neosocialist
+		days_remove = 49
+		cost = 50
+		days_re_enable = 100
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		ai_will_do = {
+			base = 25
+		}
+		modifier = {
+			weekly_manpower = -100
+			misc_expense = 5
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_utilize_jayhawker_militia_decision complete_effect"
+			subtract_from_variable = {
+				var = income_var
+				value = 0.005
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_utilize_jayhawker_militia_decision remove_effect"
+			add_stability = 0.010
+			add_war_support = 0.010
+		}
+	}
+	USB_tackle_underground_network_decision = {
+		icon = APA_neosocialist
+		days_remove = 40
+		cost = 50
+		days_re_enable = 80
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		modifier = {
+			war_support_factor = -0.05
+			fascist_drift = -0.01
+			nationalist_drift = -0.01
+			communist_drift = -0.01
+			national_socialist_drift = -0.01
+			party_popularity_stability_factor = 0.2
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_tackle_underground_network_decision complete_effect"
+			set_temp_variable = {
+			    var = society_development_var_temp
+			    value = 0.02
+		    }
+		    add_society_development = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_tackle_underground_network_decision remove_effect"
+			add_stability = 0.010
+			add_war_support = 0.010
+		}
+	}
+	USB_destroy_constitutionalist_remnants_decision = {
+		icon = APA_neosocialist
+		days_remove = 40
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		modifier = {
+			war_support_factor = 0.01
+			authoritarian_democrat_drift = -0.03
+			party_popularity_stability_factor = 0.2
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_constitutionalist_remnants_decision complete_effect"
+			hidden_effect = {
+				set_temp_variable = {
+			        var = society_development_var_temp
+			        value = 0.03
+				}
+		        add_society_development = yes
+		        set_temp_variable = {
+			        var = industrial_development_var_temp
+			        value = 0.02
+		        }
+		        add_industrial_development = yes
+				remove_idea = USB_ACG_insurgency_idea
+				country_event = {
+					id = union_post2acw.37
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_constitutionalist_remnants_decision remove_effect"
+			add_stability = 0.02
+			add_war_support = 0.03
+		}
+	}
+	USB_destroy_national_front_remnants_decision = {
+		icon = APA_neosocialist
+		days_remove = 40
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		modifier = {
+			war_support_factor = 0.03
+			fascist_drift = -0.05
+			national_socialist_drift = -0.06
+			party_popularity_stability_factor = 0.4
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_national_front_remnants_decision complete_effect"
+			hidden_effect = {
+				set_temp_variable = {
+			        var = society_development_var_temp
+			        value = 0.04
+				}
+		        add_society_development = yes
+		        set_temp_variable = {
+			        var = industrial_development_var_temp
+			        value = 0.02
+		        }
+		        add_industrial_development = yes
+				set_temp_variable = {
+					var = academic_development_var_temp
+					value = 0.03
+				}
+				add_academic_development = yes
+				remove_idea = USB_nsm_remnants_idea
+				remove_idea = USB_patriot_front_remnants_idea
+				country_event = {
+					id = union_post2acw.17
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_national_front_remnants_decision remove_effect"
+			add_stability = 0.01
+			add_war_support = 0.01
+		}
+	}
+	USB_destroy_apla_remnants_decision = {
+		icon = APA_neosocialist
+		days_remove = 40
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		modifier = {
+			war_support_factor = 0.03
+			communist_drift = -0.05
+			totalitarian_socialist_drift = -0.06
+			party_popularity_stability_factor = 0.2
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_apla_remnants_decision complete_effect"
+			hidden_effect = {
+				set_temp_variable = {
+			        var = society_development_var_temp
+			        value = 0.02
+				}
+		        add_society_development = yes
+		        set_temp_variable = {
+			        var = industrial_development_var_temp
+			        value = 0.05
+		        }
+				add_industrial_development = yes
+				set_temp_variable = {
+					var = academic_development_var_temp
+					value = 0.02
+				}
+				add_academic_development = yes
+				remove_idea = USB_army_of_perpetual_resistance_idea
+				country_event = {
+					id = union_post2acw.16
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_apla_remnants_decision remove_effect"
+			add_stability = 0.03
+			add_war_support = 0.03
+		}
+	}
+	USB_destroy_cascadian_remnants_decision = {
+		icon = APA_neosocialist
+		days_remove = 50
+		cost = 60
+		fire_only_once = yes
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_weed_out_partisan_insurgents
+		}
+		modifier = {
+			war_support_factor = 0.01
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_cascadian_remnants_decision complete_effect"
+			hidden_effect = {
+				set_temp_variable = {
+			        var = society_development_var_temp
+			        value = 0.01
+				}
+		        add_society_development = yes
+		        set_temp_variable = {
+			        var = industrial_development_var_temp
+			        value = 0.02
+		        }
+				add_industrial_development = yes
+				set_temp_variable = {
+					var = academic_development_var_temp
+					value = 0.01
+				}
+				add_academic_development = yes
+				remove_idea = USB_cascadian_separatist_idea
+				country_event = {
+					id = union_post2acw.18
+				}
+				country_event = {
+					id = union_post2acw.38
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_destroy_cascadian_remnants_decision remove_effect"
+			add_stability = 0.02
+			add_war_support = 0.02
+		}
+	}
+}
+	USB_reunify_america_decision = {
+		icon = USA_american_reunification
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_reunify_the_nation
+		}
+		available = {
+			USA_has_states_secured = yes
+			USA_has_militias_secured = yes
+			USA_has_gangs_secured = yes
+			USA_has_separatists_secured = yes
+			USA_has_rivals_secured = yes
+		}
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = USB_michael_bloomberg_char
+						ruling_only = yes
+					}
+					has_government = authoritarian_democrat
+				}
+				country_event = {
+					id = usb.23
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = USB_rebirth
+				}
+				country_event = {
+					id = usb.50
+				}
+				news_event = {
+					id = news.167
+					hours = 6
+				}
+			}
+			else = {
+				country_event = {
+					id = usb.21
+				}
+				hidden_effect = {
+					country_event = {
+						id = usb.104
+						days = 10
+						random_hours = 10
+					}
+				}
+			}
+		}
+		remove_effect = {
+		}
+	}
+	USB_nationwide_crack_down_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_complicity_or_death
+		}
+		available = {
+			has_completed_focus = USB_complicity_or_death
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 21
+		days_re_enable = 105
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		custom_cost_text = 30cp_cost
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					has_active_resistance = yes
+				}
+				add_resistance = -5
+			}
+		}
+	}
+	USB_force_compliance_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_complicity_or_death
+		}
+		available = {
+			has_completed_focus = USB_complicity_or_death
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		custom_cost_text = decision_cost_CP_25_pp_50
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 49
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -50
+			}
+		}
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					has_active_resistance = yes
+				}
+				add_compliance = 5
+			}
+		}
+	}
+	USB_unification_campaign_mission = {
+		icon = GFX_FRA_Army_Demands
+		is_good = yes
+		selectable_mission = no
+		days_mission_timeout = 40
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			has_global_flag = USA_american_civil_war_over_global
+		}
+		cancel_effect = {
+			remove_mission = USB_unification_campaign_mission
+		}
+		timeout_effect = {
+			activate_mission = USB_unification_campaign_mission
+			random_neighbor_country = {
+				limit = {
+					OR = {
+						USA_is_militia_tag = yes
+						USA_is_rival_tag = yes
+						USA_is_separatist_tag = yes
+						USA_is_gang_tag = yes
+					}
+					NOT = {
+						has_country_flag = USB_caligula_target_flag
+					}
+				}
+				set_country_flag = USB_caligula_target_flag
+				USB = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = USB_caligula_target_flag
+						NOT = {
+							has_war_with = USB
+						}
+					}
+				}
+				random_army_leader = {
+					limit = {
+						NOT = {
+							is_character = USA_robert_b._abrams_char							#Trump Warden
+							is_character = USA_kenneth_tovo_char							#West Coast Warden
+							is_character = USA_paul_lacamera_char							#Southern Warden
+							is_character = USA_lloyd_austin_char							#Michigan Warden - Biden is Racist
+							is_character = USA_terrence_o_shaughnessy_char							#New England Warden
+							is_character = USA_charles_chiarotti_char							#Canadian Warden
+						}
+					}
+					hidden_effect = {
+						retire = yes
+					}
+					custom_effect_tooltip = USB_kill_general_tt
+				}
+				random_army_leader = {
+					add_timed_unit_leader_trait = {
+						trait = USB_cowed_by_caligula
+						days = 120
+					}
+				}
+			}
+		}
+	}
+	USB_send_ultimatum_to_FROM_decision = {
+		icon = generic_prepare_civil_war
+		war_with_target_on_remove = yes
+		fire_only_once = no
+		target_array = USA.faction_tag_array
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			is_in_faction = yes
+			is_faction_leader = yes
+			FROM = {
+				is_in_faction = no
+				exists = yes
+			}
+		}
+		target_root_trigger = {
+			has_completed_focus = USB_neutrality_is_complicity
+		}
+		target_trigger = {
+			FROM = {
+				is_in_faction = no
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+				}
+				OR = {
+					USA_is_state_tag = yes
+					tag = DUG
+					tag = ATF
+				}
+				OR = {
+					any_controlled_state = {
+						any_neighbor_state = {
+							is_controlled_by = ROOT
+						}
+					}
+					any_other_country = {
+						OR = {
+							is_in_faction_with = ROOT
+							is_puppet_of = ROOT
+						}
+						any_controlled_state = {
+							any_neighbor_state = {
+								is_controlled_by = PREV.PREV.PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USB_war_justification_flag
+			}
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = USB_war_justification_flag
+				days = 14
+				value = 1
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_completed_focus = USB_rebirth
+				}
+				FROM = {
+					country_event = usb.73
+				}
+			}
+			else = {
+				add_FROM_to_coalition = yes
+			}
+		}
+	}
+	USB_attack_FROM_decision = {
+		icon = generic_prepare_civil_war
+		war_with_target_on_remove = yes
+		fire_only_once = no
+		days_remove = 14
+		target_array = USA.faction_tag_array
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+		}
+		target_root_trigger = {
+			has_completed_focus = USB_reunify_the_nation
+		}
+		target_trigger = {
+			FROM = {
+				NOT = {
+					has_war_with = ROOT
+					tag = DUG
+				}
+				OR = {
+					AND = {
+						USB = {
+							has_completed_focus = USB_end_the_traitors
+						}
+						USA_is_militia_tag = yes
+					}
+					AND = {
+						USB = {
+							has_completed_focus = USB_crush_the_rebels
+						}
+						OR = {
+							USA_is_rival_tag = yes
+							USA_is_separatist_tag = yes
+							USA_is_gang_tag = yes
+						}
+					}
+				}
+				OR = {
+					any_controlled_state = {
+						any_neighbor_state = {
+							is_controlled_by = ROOT
+						}
+					}
+					any_other_country = {
+						OR = {
+							is_in_faction_with = ROOT
+							is_puppet_of = ROOT
+						}
+						any_controlled_state = {
+							any_neighbor_state = {
+								is_controlled_by = PREV.PREV.PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0
+				OR = {
+					is_faction_leader = no
+					any_other_country = {
+						is_in_faction_with = ROOT
+						is_ai = no
+					}
+					strength_ratio = {
+						tag = FROM
+						ratio < 0.3
+					}
+				}
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USB_war_justification_flag
+			}
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = USB_war_justification_flag
+				days = 14
+				value = 1
+			}
+		}
+		remove_effect = {
+			war_with_FROM = yes
+		}
+	}
+}
+USB_war_of_the_wards_category = {
+	USB_reunify_america_wards_decision = {
+		icon = USA_american_reunification
+		cancel_if_not_visible = yes
+		cost = 0
+		fire_only_once = yes
+		days_remove = 5
+		allowed = {
+			NOT = {	original_tag = USG }
+		}
+		visible = {
+			NOT = {
+				tag = USG
+			}
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			set_cosmetic_tag = USB_CLGL_USA
+		}
+		remove_effect = {
+			country_event = bdnspch.1865
+		}
+	}
+	USB_barron_save_america_decision = {
+		icon = USA_american_reunification
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = USG
+		}
+		visible = {
+			tag = USG
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			set_cosmetic_tag = USA
+		}
+		remove_effect = {
+		}
+	}
+}
+USB_wardens_of_the_republic_decision_category = {
+	USA_reign_in_state_decision = {
+		icon = GFX_FRA_conduct_land_exercises
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		on_map_mode = map_only
+		target_array = USA.coreable_states_capitals
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = {
+					has_state_flag = USB_ward_state
+				}
+			}
+		}
+		visible = {
+		}
+		available = {
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USA_reign_in_state_decision in [FROM.GetName] remove_effect"
+			USB_warden_scripted_effect = yes
+		}
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					is_controlled_by = USB
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	USB_raze_the_trumpies_decision = {
+		icon = generic_assassination
+		custom_cost_trigger = {
+			NOT = {
+				command_power < 10
+			}
+		}
+		target_array = USA.coreable_states_capitals
+		custom_cost_text = 10cp_cost
+		days_remove = 28
+		days_re_enable = 21
+		fire_only_once = no
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = {
+					has_state_category = wasteland
+				}
+				has_dynamic_modifier = {
+					modifier = USB_trump_ward
+				}
+			}
+		}
+		visible = {
+		}
+		available = {
+			NOT = {
+				has_country_flag = USB_raze_state_flag
+			}
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = USB_raze_state_flag
+				days = 14
+			}
+			effect_tooltip = {
+				add_manpower = -10000
+			}
+			hidden_effect = {
+				add_command_power = -10
+				FROM = {
+					add_manpower = -10000
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_raze_the_trumpies_decision in [FROM.GetName] remove_effect"
+			army_experience = 50
+			effect_tooltip = {
+				FROM = {
+					decrease_state_category = yes
+				}
+			}
+			hidden_effect = {
+				FROM = {
+					decrease_state_category = yes
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+		}
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	USB_retaliate_decision = {
+		icon = generic_assassination
+		custom_cost_text = 5cp_cost
+		custom_cost_trigger = {
+			command_power > 5
+		}
+		complete_effect = {
+			add_command_power = -5
+		}
+		days_remove = 21
+		fire_only_once = no
+		on_map_mode = map_only
+		target_array = USA.coreable_states_capitals
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+				OR = {
+					has_dynamic_modifier = {
+						modifier = USB_western_ward
+					}
+					has_dynamic_modifier = {
+						modifier = USB_southern_ward
+					}
+					has_dynamic_modifier = {
+						modifier = USB_michigan_ward
+					}
+					has_dynamic_modifier = {
+						modifier = USB_northeastern_ward
+					}
+					has_dynamic_modifier = {
+						modifier = USB_canadian_ward
+					}
+					has_dynamic_modifier = {
+						modifier = USB_mexico_ward
+					}
+				}
+			}
+		}
+		visible = {
+		}
+		available = {
+		}
+		targeted_modifier = {
+			tag = FROM
+			local_factory_sabotage = -1
+			weekly_manpower = -5000
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision USB_retaliate_decision in [FROM.GetName] remove_effect"
+			FROM = {
+				add_resistance = -25
+				add_manpower = -10000
+			}
+		}
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+USB_megapolis_category = {
+	USB_west_coast_high_speed_rail_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_national_synchronization_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 300
+		cost = 200
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 30
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USA_reconstruction_progress_var_temp
+				value = 0.05
+			}
+			USA_add_reconstruction_progress = yes
+			build_railway = {
+				#San Diego to LA
+				level = 5
+				start_province = 1562
+				target_province = 9814
+			}
+			build_railway = {
+				#LA to LV
+				level = 5
+				start_province = 9814
+				target_province = 13855
+			}
+			build_railway = {
+				#LA to Sacramento
+				level = 5
+				start_province = 9814
+				target_province = 13350
+			}
+			build_railway = {
+				#San Fran to Sacramento
+				level = 5
+				start_province = 13350
+				target_province = 13291
+			}
+			build_railway = {
+				#Eugene to Sacramento
+				level = 5
+				start_province = 13350
+				target_province = 4380
+			}
+			build_railway = {
+				#Eugene to Portland
+				level = 5
+				start_province = 4380
+				target_province = 13543
+			}
+			build_railway = {
+				#Seattle to Portland
+				level = 5
+				start_province = 13543
+				target_province = 7315
+			}
+			build_railway = {
+				#San Fran to LA
+				level = 5
+				start_province = 13291
+				target_province = 9814
+			}
+		}
+	}
+	USB_texas_high_speed_rail_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_national_synchronization_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 150
+		cost = 100
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 10
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USA_reconstruction_progress_var_temp
+				value = 0.05
+			}
+			USA_add_reconstruction_progress = yes
+			build_railway = {
+				#Austin to San Antonio
+				level = 5
+				start_province = 13460
+				target_province = 13378
+			}
+			build_railway = {
+				#Austin to Dallas
+				level = 5
+				start_province = 13460
+				target_province = 13395
+			}
+			build_railway = {
+				#Dallas to Houstin
+				level = 5
+				start_province = 13395
+				target_province = 13387
+			}
+			build_railway = {
+				#Houstin to San Antonio
+				level = 5
+				start_province = 13387
+				target_province = 13378
+			}
+		}
+	}
+	USB_chicago_high_speed_rail_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_national_synchronization_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 150
+		cost = 100
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 10
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USA_reconstruction_progress_var_temp
+				value = 0.05
+			}
+			USA_add_reconstruction_progress = yes
+			build_railway = {
+				#Chicago to Milwaukee
+				level = 5
+				start_province = 9450
+				target_province = 14110
+			}
+			build_railway = {
+				#Chicago to Indianapolis
+				level = 5
+				start_province = 9450
+				target_province = 13976
+			}
+			build_railway = {
+				#Chicago to Cleveland
+				level = 5
+				start_province = 9450
+				target_province = 14104
+			}
+			build_railway = {
+				#Cleveland to Detroit
+				level = 5
+				start_province = 14104
+				target_province = 6710
+			}
+			build_railway = {
+				#Cleveland to Louisville
+				level = 5
+				start_province = 14104
+				target_province = 13563
+			}
+			build_railway = {
+				#Louisville to Indianapolis
+				level = 5
+				start_province = 13563
+				target_province = 13976
+			}
+		}
+	}
+	USB_atlanta_high_speed_rail_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_national_synchronization_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 150
+		cost = 100
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 5
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USA_reconstruction_progress_var_temp
+				value = 0.05
+			}
+			USA_add_reconstruction_progress = yes
+			build_railway = {
+				#Atlanta to Birmingham
+				level = 5
+				start_province = 13611
+				target_province = 13596
+			}
+			build_railway = {
+				#Atlanta to Charlotte
+				level = 5
+				start_province = 13611
+				target_province = 13572
+			}
+			build_railway = {
+				#Charlotte to Raleigh
+				level = 5
+				start_province = 13572
+				target_province = 7045
+			}
+			build_railway = {
+				#Raleigh to Richmond
+				level = 5
+				start_province = 7045
+				target_province = 3823
+			}
+		}
+	}
+	USB_florida_high_speed_rail_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_national_synchronization_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 150
+		cost = 150
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 8
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USA_reconstruction_progress_var_temp
+				value = 0.05
+			}
+			USA_add_reconstruction_progress = yes
+			build_railway = {
+				#Orlando to Tampa
+				level = 5
+				start_province = 13329
+				target_province = 7388
+			}
+			build_railway = {
+				#Orlando to Jacksonville
+				level = 5
+				start_province = 13329
+				target_province = 12381
+			}
+			build_railway = {
+				#Orlando to Miami
+				level = 5
+				start_province = 13329
+				target_province = 13844
+			}
+			build_railway = {
+				#Jacksonville to Tallahassee
+				level = 5
+				start_province = 12381
+				target_province = 10407
+			}
+		}
+	}
+	USB_pack_NYC_tight_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_megapolis_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		state_target = yes
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				state = 918
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 918
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		custom_cost_text = 50_scrap_2000_manpower_cost
+		custom_cost_trigger = {
+			check_variable = {
+				var = USB_city_scrap_var
+				value = 50
+			}
+			has_manpower > 2000
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_manpower = -2000
+				set_temp_variable = {
+					var = USB_city_scrap_var_temp
+					value = -50
+				}
+				add_scrap = yes
+			}
+		}
+		modifier = {
+		}
+		remove_effect = {
+			add_victory_points = {
+				province = 13260
+				value = 5
+			}
+			918 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					918 = {
+						NOT = { is_core_of = USB }
+					}
+				}
+				918 = { add_core_of = USB }
+			}
+		}
+	}
+	USB_pack_LA_tight_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_megapolis_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		state_target = yes
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				state = 930
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 952
+				state = 930
+				state = 1298
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		custom_cost_text = 50_scrap_2000_manpower_cost
+		custom_cost_trigger = {
+			check_variable = {
+				var = USB_city_scrap_var
+				value = 50
+			}
+			has_manpower > 2000
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_manpower = -2000
+				set_temp_variable = {
+					var = USB_city_scrap_var_temp
+					value = -50
+				}
+				add_scrap = yes
+			}
+		}
+		modifier = {
+		}
+		remove_effect = {
+			random_list = {
+				33 = {
+					add_victory_points = {
+						province = 1562
+						value = 5
+					}
+					952 = {
+						increase_state_category = yes
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = office_park
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							952 = {
+								NOT = { is_core_of = USB }
+							}
+						}
+						952 = { add_core_of = USB }
+					}
+				}
+				33 = {
+					add_victory_points = {
+						province = 9814
+						value = 5
+					}
+					930 = {
+						increase_state_category = yes
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = office_park
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							930 = {
+								NOT = { is_core_of = USB }
+							}
+						}
+						930 = { add_core_of = USB }
+					}
+				}
+				33 = {
+					add_victory_points = {
+						province = 13300
+						value = 5
+					}
+					1298 = {
+						increase_state_category = yes
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = office_park
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							1298 = {
+								NOT = { is_core_of = USB }
+							}
+						}
+						1298 = { add_core_of = USB }
+					}
+				}
+			}
+		}
+	}
+	USB_build_megacities = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_megapolis_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		state_target = yes
+		days_remove = 21
+		days_re_enable = 21
+		cancel_if_not_visible = yes
+		target_array = controlled_states
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 931
+					state = 1092
+					state = 958
+					state = 1036
+					state = 1017
+					state = 956
+					state = 1099
+					state = 983
+				}
+			}
+		}
+		custom_cost_text = 50_scrap_2000_manpower_cost
+		custom_cost_trigger = {
+			check_variable = {
+				var = USB_city_scrap_var
+				value = 50
+			}
+			has_manpower > 2000
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_manpower = -2000
+				set_temp_variable = {
+					var = USB_city_scrap_var_temp
+					value = -50
+				}
+				add_scrap = yes
+			}
+		}
+		modifier = {
+			misc_expense = 25
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					FROM = {
+						state = 931
+					}
+				}
+				add_victory_points = {
+					province = 13310
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 1092
+					}
+				}
+				add_victory_points = {
+					province = 13844
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 958
+					}
+				}
+				add_victory_points = {
+					province = 13387
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 1036
+					}
+				}
+				add_victory_points = {
+					province = 7315
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 1017
+					}
+				}
+				add_victory_points = {
+					province = 13611
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 956
+					}
+				}
+				add_victory_points = {
+					province = 13395
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 1099
+					}
+				}
+				add_victory_points = {
+					province = 9450
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						state = 983
+					}
+				}
+				add_victory_points = {
+					province = 13529
+					value = 10
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { is_core_of = USB }
+					}
+				}
+				FROM = { add_core_of = USB }
+			}
+			FROM = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USB_rural_relocation_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_megapolis_project
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 7
+		days_re_enable = 0
+		cancel_if_not_visible = yes
+		custom_cost_text = 5cp_cost
+		custom_cost_trigger = {
+			command_power > 5
+		}
+		complete_effect = {
+			add_command_power = -5
+			add_to_variable = {
+				var = USB_city_scrap_var_temp
+				value = 2
+			}
+			add_scrap = yes
+			random_controlled_state = {
+				limit = {
+					is_core_of = USB
+					OR = {
+						has_state_category = pastoral
+						has_state_category = rural
+						has_state_category = village
+						has_state_category = town
+						has_state_category = suburb
+						has_state_category = large_suburb
+					}
+					NOT = {
+						any_neighbor_state = {
+							OR = {
+								has_state_category = large_city
+								has_state_category = metropolis
+								has_state_category = megalopolis
+								has_state_category = conurbation
+							}
+						}
+					}
+				}
+				decrease_state_category = yes
+			}
+		}
+		remove_effect = {
+		}
+	}
+}
+
+USB_presidential_health_category = {
+	USB_biden_health_timer_mission = {
+		icon = GFX_decision_generic_brainwash
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 150
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			has_country_leader = {
+				character = USB_joe_biden_char
+				ruling_only = yes
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_leader_with_trait = hos_blank
+				}
+				USB_decrease_biden_health = yes
+			}
+			else = {
+				USB_decrease_biden_mental_fortitude = yes
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = USB_2024_presidential_debate_flag
+						}
+						OR = {
+							has_country_leader_with_trait = hos_foggy_as_a_mirror
+							has_country_leader_with_trait = hos_lights_on_nobody_home
+							has_country_leader_with_trait = hos_present_as_last_years_calendar
+							has_country_leader_with_trait = hos_blank
+						}
+					}
+					country_event = {
+						id = usb.119
+						days = 1
+					}
+				}
+			}
+			activate_mission = USB_biden_health_timer_mission
+		}
+	}
+	USB_biden_falters_timer_mission = {
+		icon = GFX_FRA_Army_Demands
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 180
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = USB_out_of_many_one
+				has_completed_focus = USB_the_eternal_president
+			}
+		}
+		activation = {
+			always = no
+		}
+		cancel_effect = {
+			custom_effect_tooltip = USB_escaped_death_tt
+		}
+		timeout_effect = {
+			kill_country_leader = yes
+			if = {
+				limit = {
+					has_global_flag = USA_american_civil_war_over_global
+				}
+				country_event = {
+					id = usb.49
+					days = 6
+				}
+			}
+			else = {
+				country_event = {
+					id = usb.11
+					days = 6
+				}
+			}
+		}
+	}
+	USB_biden_health_timer_caligula_mission = {
+		icon = GFX_FRA_Army_Demands
+		is_good = yes
+		selectable_mission = no
+		days_mission_timeout = 300
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		timeout_effect = {
+			USB_increase_clairvoyance = yes
+			activate_mission = USB_biden_health_timer_caligula_mission
+			if = {
+				limit = {
+					has_completed_focus = USB_the_eternal_president
+					NOT = {
+						has_idea = USB_eternity_idea
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = USA_american_civil_war_over_global
+					}
+					country_event = {
+						id = usb.49
+						days = 6
+					}
+				}
+				else = {
+					country_event = {
+						id = usb.11
+						days = 6
+					}
+				}
+			}
+		}
+	}
+	USB_rebirth_of_a_president_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_rebirth
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_caligula_mission
+				days = -35
+			}
+		}
+	}
+	USB_enjoy_life_decision = {
+		icon = GFX_decision_USB_Enjoy_Life
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 14
+		days_re_enable = 30
+		cancel_if_not_visible = yes
+		modifier = {
+			stability_weekly = 0.02
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = 7
+			}
+		}
+	}
+	USB_visit_camp_david_decision = {
+		icon = GFX_decision_USB_Visit_Camp_David
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.25
+		}
+		custom_cost_text = 5cp_cost
+		custom_cost_trigger = {
+			command_power > 5
+		}
+		complete_effect = {
+			add_command_power = -5
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = 14
+			}
+		}
+	}
+	USB_CIA_REDACT_battle_reports_decision = {
+		icon = GFX_decision_generic_break_treaty
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 28
+		cancel_if_not_visible = yes
+		modifier = {
+			experience_gain_army_factor = -0.5
+		}
+		custom_cost_text = 5_army_xp_cost
+		custom_cost_trigger = {
+			has_army_experience > 5
+		}
+		complete_effect = {
+			army_experience = -5
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = -14
+			}
+		}
+	}
+	USB_CIA_forge_progress_reports_decision = {
+		icon = GFX_decision_unknown
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 28
+		cancel_if_not_visible = yes
+		modifier = {
+			command_power_gain_mult = -0.5
+		}
+		custom_cost_text = 5_army_xp_cost
+		custom_cost_trigger = {
+			has_army_experience > 5
+		}
+		complete_effect = {
+			army_experience = -5
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = 14
+			}
+		}
+	}
+	USB_sideline_the_president_decision = {
+		icon = USC_congress
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 45
+		cancel_if_not_visible = yes
+		cost = 10
+		modifier = {
+			political_power_gain = 0.1
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = -28
+			}
+		}
+	}
+	USB_isolate_the_president_decision = {
+		icon = generic_mask
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 21
+		days_re_enable = 56
+		cancel_if_not_visible = yes
+		cost = 25
+		modifier = {
+			stability_weekly = 0.02
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = USB_biden_health_timer_mission
+				days = -30
+			}
+		}
+	}
+}
+
+USB_balance_of_power_category = {
+	USB_add_left_bop_debug_decision = {
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			is_debug = yes
+			is_ai = no
+			has_power_balance = {
+				id = USB_trust_bop
+			}
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = USB_trust_bop
+				value = -0.35
+			}
+		}
+	}
+	USB_add_right_bop_debug_decision = {
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			is_debug = yes
+			is_ai = no
+			has_power_balance = {
+				id = USB_trust_bop
+			}
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = USB_trust_bop
+				value = 0.35
+			}
+		}
+	}
+	USB_repeal_22_amendment_decision = {
+		icon = USC_repeal_22_amendment
+		cost = 100
+		days_remove = 25
+		fire_only_once = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			hidden_trigger = {
+				has_idea = USB_barack_obama_hog
+				power_balance_value = {
+					id = USB_trust_bop
+					value > 0.35
+				}
+			}
+		}
+		available = {
+			power_balance_value = {
+				id = USB_trust_bop
+				value > 0.9
+			}
+		}
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			base = 100
+		}
+		modifier = {
+			political_power_gain = -0.125
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USB_barack_obama_hog
+				}
+				country_event = {
+					id = usb.128
+					days = 5
+				}
+			}
+		}
+	}
+	USB_hillary_fight_progressives = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+			has_country_leader = {
+				character = USB_hillary_clinton_char
+				ruling_only = yes
+			}
+		}
+		available = {
+			has_country_flag = USB_progressive_enable_flag
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.05
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.1
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = -0.05
+			}
+			USB_add_support_pro = yes
+		}
+	}
+	USB_hillary_end_the_progressives = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+			has_country_leader = {
+				character = USB_hillary_clinton_char
+				ruling_only = yes
+			}
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		ai_will_do = {
+			base = 25
+		}
+		cost = 100
+		days_remove = 50
+		days_re_enable = 10
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.2
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_pro = yes
+		}
+	}
+	USB_hillary_align_the_press = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_leader = {
+				character = USB_hillary_clinton_char
+				ruling_only = yes
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 25
+		}
+		cost = 50
+		days_remove = 50
+		days_re_enable = 100
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = 0.05
+			political_power_cost = -0.1
+			weekly_manpower = -25
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.1
+			}
+			add_power_balance_value = {
+				id = USB_trust_bop
+				value = 0.12
+			}
+		}
+	}
+	USB_bloomberg_wash_out_the_progressives = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+			has_country_leader = {
+				character = USB_michael_bloomberg_char
+				ruling_only = yes
+			}
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		ai_will_do = {
+			base = 25
+		}
+		custom_cost_text = dx_more_than_100B
+		custom_cost_trigger = {
+			check_variable = {
+				var = income_var
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		days_remove = 50
+		days_re_enable = 10
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.2
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = income_var_temp
+				value = -100
+			}
+			add_income = yes
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_pro = yes
+		}
+	}
+	USB_bloomberg_buy_the_liberals = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_liberal_enable_flag
+			has_country_leader = {
+				character = USB_michael_bloomberg_char
+				ruling_only = yes
+			}
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.15
+			}
+			USB_has_influence_neo_less_than = yes
+		}
+		ai_will_do = {
+			base = 25
+		}
+		custom_cost_text = dx_more_than_100B
+		custom_cost_trigger = {
+			check_variable = {
+				var = income_var
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		days_remove = 50
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = -0.2
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = income_var_temp
+				value = -100
+			}
+			add_income = yes
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_neo = yes
+		}
+	}
+	USB_bloomberg_bribe_the_republicans = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_conservative_enable_flag
+			has_country_leader = {
+				character = USB_michael_bloomberg_char
+				ruling_only = yes
+			}
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.15
+			}
+			USB_has_influence_con_less_than = yes
+		}
+		ai_will_do = {
+			base = 25
+		}
+		custom_cost_text = dx_more_than_100B
+		custom_cost_trigger = {
+			check_variable = {
+				var = income_var
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		days_remove = 50
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			conservative_drift = -0.2
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = income_var_temp
+				value = -100
+			}
+			add_income = yes
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_con = yes
+		}
+	}
+	
+	USB_entice_the_masses_decision = {
+		icon = generic_political_rally
+		cost = 50
+		days_remove = 70
+		days_re_enable = 280
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+		}
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USB_trust_bop
+					value > 0.85
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < 0
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.01
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	#Good Agendas
+	USB_for_the_common_man_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_good_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_for_the_common_man_agenda_flag
+		}
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = USB_trust_bop
+					range < USB_low_trust_range
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = GER_trust_bop
+					value < 0.45
+				}
+			}
+		}
+		modifier = {
+			poverty_development_monthly = 0.03
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_very_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_overwhelmingly_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.2
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.1
+				}
+			}
+		}
+		remove_effect = {
+		}
+	}
+	USB_united_democracy_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_good_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_united_democracy_agenda_flag
+		}
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = USB_trust_bop
+					range < USB_low_trust_range
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = GER_trust_bop
+					value < 0.45
+				}
+			}
+		}
+		modifier = {
+			party_popularity_stability_factor = 0.3
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_very_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_overwhelmingly_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.2
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = ruling_popularity_var_temp
+				value = 0.05
+			}
+			add_ruling_party_popularity = yes
+		}
+	}
+	USB_bread_and_circuses_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_good_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_bread_and_circuses_agenda_flag
+		}
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = USB_trust_bop
+					range < USB_low_trust_range
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = GER_trust_bop
+					value < 0.45
+				}
+			}
+		}
+		modifier = {
+			production_speed_industrial_complex_factor = 0.2
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_very_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_overwhelmingly_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.2
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.1
+				}
+			}
+		}
+		remove_effect = {
+		}
+	}
+	USB_sacred_endeavor_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_good_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_sacred_endeavor_agenda_flag
+		}
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = USB_trust_bop
+					range < USB_low_trust_range
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = GER_trust_bop
+					value < 0.45
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = 0.003
+			weekly_bombing_war_support = 0.006
+			weekly_casualties_war_support = 0.006
+			weekly_convoys_war_support = 0.006
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_very_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range = USB_overwhelmingly_high_trust_range
+					}
+				}
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.2
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = USB_trust_bop
+					value = -0.1
+				}
+			}
+		}
+		remove_effect = {
+		}
+	}
+	#Bad Agendas
+	USB_liberty_or_death_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_bad_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 175
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_liberty_or_death_agenda_flag
+		}
+		available = {
+			OR = {
+				NOT = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range > USB_high_trust_range
+					}
+				}
+				has_power_balance_modifier = {
+					id = USB_trust_bop
+					modifier = USB_liberty_or_death_agenda_bop_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < -0.3
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+			army_attack_factor = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	USB_memories_of_the_past_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_bad_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_memories_of_the_past_agenda_flag
+		}
+		available = {
+			OR = {
+				NOT = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range > USB_high_trust_range
+					}
+				}
+				has_power_balance_modifier = {
+					id = USB_trust_bop
+					modifier = USB_memories_of_the_past_agenda_bop_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < -0.3
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+			conservative_drift = -0.05
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	USB_upholding_expectations_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_bad_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_upholding_expectations_agenda_flag
+		}
+		available = {
+			OR = {
+				NOT = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range > USB_high_trust_range
+					}
+				}
+				has_power_balance_modifier = {
+					id = USB_trust_bop
+					modifier = generic_upholding_expectations_agenda_bop_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < -0.3
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+			stability_weekly = 0.004
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	USB_practical_finances_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_bad_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_practical_finances_agenda_flag
+		}
+		available = {
+			OR = {
+				NOT = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range > USB_high_trust_range
+					}
+				}
+				has_power_balance_modifier = {
+					id = USB_trust_bop
+					modifier = generic_practical_finances_agenda_bop_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < -0.3
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+			income_growth_factor = 0.2
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	USB_eyes_wide_shut_agenda_decision = {
+		icon = generic_shaking_hands
+		cost = USB_bad_agenda_decision_cost_var
+		days_remove = 175
+		days_re_enable = 525
+		cancel_if_not_visible = yes
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = generic_eyes_wide_shut_agenda_flag
+		}
+		available = {
+			OR = {
+				NOT = {
+					is_power_balance_in_range = {
+						id = USB_trust_bop
+						range > USB_high_trust_range
+					}
+				}
+				has_power_balance_modifier = {
+					id = USB_trust_bop
+					modifier = generic_eyes_wide_shut_agenda_bop_modifier
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 10
+				power_balance_value = {
+					id = USB_trust_bop
+					value < -0.3
+				}
+			}
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+			society_development_monthly = 0.03
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+}
+
+USB_congressional_factions_caligula_category = {
+	USB_ai_core_breaks_off_mission = {
+		icon = revolt
+		priority = 9
+		days_mission_timeout = 60
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		cancel_effect = {
+			country_event = bdnspch.124
+		}
+		timeout_effect = {
+			random_list = {
+				33 = {
+					modifier = {
+						factor = 0
+						has_country_flag = USB_paine_uprising_flag
+					}
+					country_event = bdnspch.121
+				}
+				33 = {
+					modifier = {
+						factor = 0
+						has_country_flag = USB_lincoln_uprising_flag
+					}
+					country_event = bdnspch.122
+				}
+				33 = {
+					modifier = {
+						factor = 0
+						has_country_flag = USB_macarthur_uprising_flag
+					}
+					country_event = bdnspch.123
+				}
+			}
+			activate_mission = USB_ai_core_breaks_off_mission
+		}
+	}
+	USB_switch_subroutine_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_ai_stable_flag
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 365
+		cancel_if_not_visible = yes
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = USB_subroutine_switch_tt
+		}
+		remove_effect = {
+			country_event = bdnspch.100
+		}
+	}
+	USB_ban_orthodoxy_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		available = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 21
+		days_re_enable = 21
+		cancel_if_not_visible = yes
+		cost = 50
+		modifier = {
+			political_power_cost = 0.1
+		}
+		remove_effect = {
+			SOV = {
+				add_manpower = -10000
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+			USB = {
+				set_temp_variable = {
+					var = academic_development_var_temp
+					value = 0.03
+				}
+				add_academic_development = yes
+			}
+		}
+	}
+	USB_neo_marshall_plan_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		available = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 28
+		cancel_if_not_visible = yes
+		cost = 75
+		complete_effect = {
+			GER = {
+				set_temp_variable = {
+					var = debt_var_temp
+					value = 50
+				}
+				add_debt = yes
+			}
+			FRA = {
+				set_temp_variable = {
+					var = debt_var_temp
+					value = 50
+				}
+				add_debt = yes
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_core_of = GER
+						is_core_of = FRA
+					}
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_core_of = GER
+						is_core_of = FRA
+					}
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_state = {
+				limit = {
+					OR = {
+						is_core_of = GER
+						is_core_of = FRA
+					}
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+		remove_effect = {
+			USB = {
+				set_temp_variable = {
+					var = debt_var_temp
+					value = -100
+				}
+				add_debt = yes
+			}
+			random_state = {
+				limit = {
+					is_core_of = USB
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = {
+					is_core_of = USB
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = {
+					is_core_of = USB
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USB_chinese_exclusion_act_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		available = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 28
+		cancel_if_not_visible = yes
+		cost = 50
+		complete_effect = {
+			random_state = {
+				limit = {
+					OR = {
+						USA_is_washington_state = yes
+						USA_is_oregon_state = yes
+						USA_is_california_state = yes
+					}
+				}
+				add_manpower = -5000
+			}
+			random_state = {
+				limit = {
+					OR = {
+						USA_is_washington_state = yes
+						USA_is_oregon_state = yes
+						USA_is_california_state = yes
+					}
+				}
+				add_manpower = -5000
+			}
+			random_state = {
+				limit = {
+					OR = {
+						USA_is_washington_state = yes
+						USA_is_oregon_state = yes
+						USA_is_california_state = yes
+					}
+				}
+				add_manpower = -5000
+			}
+		}
+		remove_effect = {
+			PRC = {
+				add_political_power = -50
+				add_stability = -0.05
+			}
+			random_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				add_manpower = 5000
+			}
+			random_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				add_manpower = 5000
+			}
+			random_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				add_manpower = 5000
+			}
+			set_temp_variable = {
+				var = income_var_temp
+				value = 40
+			}
+			add_income = yes
+		}
+	}
+	USB_factories_for_claims_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_enemies_of_america
+			check_variable = {
+				USB_caligula_japan_aid_var < 7
+			}
+		}
+		available = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		days_re_enable = 7
+		cancel_if_not_visible = yes
+		cost = 25
+		remove_effect = {
+			JAP = {
+				add_nuclear_bombs = 1
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = USB_caligula_japan_aid_var
+					value = 1
+				}
+			}
+		}
+	}
+	USB_utilize_the_aid_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_enemies_of_america
+			check_variable = {
+				USB_caligula_japan_aid_var > 6
+			}
+		}
+		available = {
+			has_completed_focus = USB_enemies_of_america
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 100
+		remove_effect = {
+			hidden_effect = {
+				sound_effect = siren_sound_effect
+				every_country = {
+					goto_province = 1182
+				}
+				launch_nuke = {
+					province = 9950
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 1092
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 7072
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 11960
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 10125
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 1182
+					controller = JAP
+					use_nuke = yes
+				}
+				launch_nuke = {
+					province = 7169
+					controller = JAP
+					use_nuke = yes
+				}
+				JAP = {
+					add_nuclear_bombs = -7
+				}
+			}
+		}
+	}
+	#USB_claim_the_cascadian_bioregion_decision
+	USB_claim_the_natural_borders_of_new_england_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_america_dreaming
+		}
+		available = {
+			has_completed_focus = USB_america_dreaming
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		remove_effect = {
+			#TODO CORES ON MARITIME PROVINCES
+			create_wargoal = {
+				type = annex_everything
+				target = CAN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = QUE
+			}
+		}
+	}
+	USB_put_down_the_rabid_eagle_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_america_dreaming
+		}
+		available = {
+			has_completed_focus = USB_america_dreaming
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		remove_effect = {
+			every_other_country = {
+				limit = {
+					exists = yes
+					NOT = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						tag = BRN
+						tag = BSK
+						tag = SIN
+						tag = CDJ
+						tag = GUC
+						tag = LFM
+						tag = ZAP
+						tag = MEX
+						tag = CAS
+					}
+				}
+				war_with_PREV = yes
+			}
+		}
+	}
+	USB_secure_our_front_yard_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_america_dreaming
+		}
+		available = {
+			has_completed_focus = USB_america_dreaming
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = NIC
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ELS
+			}
+		}
+	}
+	USB_rule_by_permission_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			always = no
+			has_completed_focus = USB_america_dreaming
+		}
+		available = {
+			has_completed_focus = USB_america_dreaming
+		}
+		targets = {
+			COL
+			VEN
+			BRA
+			PRU
+			ECU
+			ARG
+			CHL
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		remove_effect = {
+			random_list = {
+				50 = {
+					puppet = FROM
+					FROM = {
+						set_politics = {
+							ruling_party = nationalist
+			    			last_election = "2022.04.10"
+							election_frequency = 60
+							elections_allowed = yes
+						}
+						create_country_leader = {
+							name = "Agent"
+							picture = "gfx/Leaders/AGENT/Agent_leader.png"
+							ideology = purification_administration
+							traits = {
+							}
+						}
+					}
+				}
+				50 = {
+					create_wargoal = {
+						type = annex_everything
+						target = FROM
+					}
+				}
+			}
+		}
+	}
+	USB_reclaim_liberia_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_america_dreaming
+		}
+		available = {
+			has_completed_focus = USB_america_dreaming
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = LIB
+			}
+		}
+	}
+	USB_party_doctrine_mission = {
+		icon = GFX_FRA_Army_Demands
+		is_good = yes
+		selectable_mission = no
+		days_mission_timeout = 60
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				has_country_flag = USB_first_doctrine_passed_flag
+			}
+			nationalist < 0.2
+		}
+		cancel_effect = {
+			kill_country_leader = yes
+			country_event = {
+				id = usb.49
+				days = 3
+			}
+		}
+		timeout_effect = {
+			activate_mission = USB_party_doctrine_mission
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = USB_first_doctrine_passed_flag
+					}
+				}
+				custom_effect_tooltip = USB_first_doctrine_tt
+				effect_tooltip = {
+					add_ideas = USB_NPC_democratic_party_doctrine_idea
+				}
+				hidden_effect = {
+					set_country_flag = USB_first_doctrine_passed_flag
+					add_dynamic_modifier = {
+						modifier = USB_the_NPC_dynamic_modifier
+					}
+					add_to_variable = {
+						var = USB_NPC_stability_weekly_dynamic_var
+						value = 0.002
+					}
+					add_to_variable = {
+						var = USB_NPC_nationalist_drift_dynamic_var
+						value = 0.025
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_completed_focus = USB_the_republic_endures }
+					has_dynamic_modifier = {
+						modifier = USB_the_NPC_dynamic_modifier
+					}
+				}
+				USB_NPC_doctrine_increase_weak = yes
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = USB_the_republic_endures
+					has_dynamic_modifier = {
+						modifier = USB_the_NPC_dynamic_modifier
+					}
+				}
+				USB_NPC_doctrine_increase = yes
+			}
+		}
+	}
+	USB_caligula_rally_against_pro_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.05
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.1
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = -0.05
+			}
+			USB_add_support_pro = yes
+		}
+	}
+	USB_caligula_puppet_pro_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+			has_completed_focus = USB_out_of_many_one
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.25
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.25
+			}
+			USB_add_support_pro = yes
+		}
+	}
+	USB_caligula_pacify_pro_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_progressive_enable_flag
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 100
+		days_remove = 90
+		days_re_enable = 90
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.2
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_pro = yes
+		}
+	}
+	USB_caligula_rally_against_con_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_conservative_enable_flag
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_con_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			conservative_drift = -0.05
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_con_var_temp
+				value = -0.1
+			}
+			USB_add_influence_con = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.05
+			}
+			USB_add_support_con = yes
+		}
+	}
+	USB_caligula_puppet_con_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_conservative_enable_flag
+			has_completed_focus = USB_out_of_many_one
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_con_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_con_var_temp
+				value = -0.25
+			}
+			USB_add_influence_con = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = 0.25
+			}
+			USB_add_support_con = yes
+		}
+	}
+	USB_caligula_pacify_con_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_conservative_enable_flag
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_con_less_than = yes
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_con_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 100
+		days_remove = 90
+		days_re_enable = 90
+		cancel_if_not_visible = yes
+		modifier = {
+			conservative_drift = -0.2
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_con = yes
+		}
+	}
+	USB_caligula_rally_against_ino_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_innovationist_enable_flagino
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_ino_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			authoritarian_democrat_drift = -0.05
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_ino_var_temp
+				value = -0.1
+			}
+			USB_add_influence_ino = yes
+			set_temp_variable = {
+				var = USB_support_ino_var_temp
+				value = -0.05
+			}
+			USB_add_support_ino = yes
+		}
+	}
+	USB_caligula_puppet_ino_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_innovationist_enable_flag
+			has_completed_focus = USB_out_of_many_one
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_ino_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_ino_var_temp
+				value = -0.25
+			}
+			USB_add_influence_ino = yes
+			set_temp_variable = {
+				var = USB_support_ino_var_temp
+				value = 0.25
+			}
+			USB_add_support_ino = yes
+		}
+	}
+	USB_caligula_pacify_ino_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_innovationist_enable_flag
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_ino_less_than = yes
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_ino_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 100
+		days_remove = 90
+		days_re_enable = 90
+		cancel_if_not_visible = yes
+		modifier = {
+			authoritarian_democrat_drift = -0.2
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			clr_country_flag = USB_innovationist_enable_flag
+		}
+	}
+	USB_caligula_rally_against_neo_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_liberal_enable_flag
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_neo_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = -0.05
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.1
+			}
+			USB_add_influence_neo = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.05
+			}
+			USB_add_support_neo = yes
+		}
+	}
+	USB_caligula_puppet_neo_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_liberal_enable_flag
+			has_completed_focus = USB_out_of_many_one
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.05
+			}
+			USB_has_influence_neo_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.25
+			}
+			USB_add_influence_neo = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.25
+			}
+			USB_add_support_neo = yes
+		}
+	}
+	USB_caligula_pacify_neo_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_flag = USB_liberal_enable_flag
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_neo_less_than = yes
+		}
+		available = {
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_neo_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 100
+		days_remove = 90
+		days_re_enable = 90
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = -0.2
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 70
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			USB_kill_neo = yes
+		}
+	}
+	USB_NPC_raise_taxes_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_dynamic_modifier = {
+				modifier = USB_the_NPC_dynamic_modifier
+			}
+		}
+		available = {
+			has_active_mission = USB_party_doctrine_mission
+			NOT = {
+				has_country_flag = USB_chose_doctrine_flag
+				has_country_flag = USB_chose_doctrine_2_flag
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 20
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = USB_party_doctrine_mission
+				days = 70
+			}
+			add_to_variable = {
+				var = USB_NPC_consumer_goods_factor_dynamic_var
+				value = -0.05
+			}
+			add_to_variable = {
+				var = USB_NPC_income_growth_factor_dynamic_var
+				value = 0.05
+			}
+			add_to_variable = {
+				var = USB_NPC_inflation_monthly_dynamic_var
+				value = -0.002
+			}
+			add_to_variable = {
+				var = USB_NPC_stability_weekly_dynamic_var
+				value = 0.002
+			}
+			if = {
+				limit = {
+					has_completed_focus = USB_the_republic_endures
+					NOT = {
+						has_country_flag = USB_chose_doctrine_1_flag
+					}
+				}
+				set_country_flag = USB_chose_doctrine_1_flag
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = USB_the_republic_endures
+					has_country_flag = USB_chose_doctrine_1_flag
+				}
+				set_country_flag = USB_chose_doctrine_2_flag
+			}
+			else = {
+				set_country_flag = USB_chose_doctrine_flag
+			}
+		}
+		remove_effect = {
+			increase_taxes = yes
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = USB_party_doctrine_mission
+					}
+				}
+				activate_mission = USB_party_doctrine_mission
+			}
+			clr_country_flag = USB_chose_doctrine_flag
+			if = {
+				limit = {
+					has_country_flag = USB_chose_doctrine_1_flag
+				}
+				clr_country_flag = USB_chose_doctrine_1_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = USB_chose_doctrine_2_flag
+				}
+				clr_country_flag = USB_chose_doctrine_2_flag
+			}
+		}
+	}
+	USB_NPC_american_levies_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_dynamic_modifier = {
+				modifier = USB_the_NPC_dynamic_modifier
+			}
+		}
+		available = {
+			has_active_mission = USB_party_doctrine_mission
+			NOT = {
+				has_country_flag = USB_chose_doctrine_flag
+				has_country_flag = USB_chose_doctrine_2_flag
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 20
+		days_remove = 21
+		days_re_enable = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = USB_party_doctrine_mission
+				days = 70
+			}
+			add_to_variable = {
+				var = USB_NPC_conscription_dynamic_var
+				value = 0.025
+			}
+			add_to_variable = {
+				var = USB_NPC_stability_weekly_dynamic_var
+				value = 0.002
+			}
+			if = {
+				limit = {
+					has_completed_focus = USB_the_republic_endures
+					NOT = {
+						has_country_flag = USB_chose_doctrine_1_flag
+					}
+				}
+				set_country_flag = USB_chose_doctrine_1_flag
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = USB_the_republic_endures
+					has_country_flag = USB_chose_doctrine_1_flag
+				}
+				set_country_flag = USB_chose_doctrine_2_flag
+			}
+			else = {
+				set_country_flag = USB_chose_doctrine_flag
+			}
+		}
+		remove_effect = {
+			add_manpower = 25000
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = USB_party_doctrine_mission
+					}
+				}
+				activate_mission = USB_party_doctrine_mission
+			}
+			clr_country_flag = USB_chose_doctrine_flag
+			if = {
+				limit = {
+					has_country_flag = USB_chose_doctrine_1_flag
+				}
+				clr_country_flag = USB_chose_doctrine_1_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = USB_chose_doctrine_2_flag
+				}
+				clr_country_flag = USB_chose_doctrine_2_flag
+			}
+		}
+	}
+	USB_rewrite_american_history_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_department_of_information
+		}
+		available = {
+			has_completed_focus = USB_department_of_information
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 105
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			academic_development_monthly = -0.1
+			political_power_cost = 0.05
+		}
+		cost = 50
+		remove_effect = {
+			add_war_support = 0.1
+			country_event = {
+				id = bdnspch.103
+			}			#The New American Classroom
+		}
+	}
+	USB_caligula_world_conquest_mission = {
+		icon = GFX_FRA_Army_Demands
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 30
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			always = no
+		}
+		cancel_effect = {
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					has_war = no
+				}
+				country_event = bdnspch.8888
+			}
+			else = {
+				activate_mission = USB_caligula_world_conquest_mission
+				random_neighbor_country = {
+					declare_war_on = {
+						target = USB
+						type = annex_everything
+					}
+				}
+				random_country = {
+					declare_war_on = {
+						target = USB
+						type = annex_everything
+					}
+				}
+			}
+		}
+		complete_effect = {
+		}
+	}
+}
+
+USB_congressional_factions_category = {
+	USB_congressional_session_mission = {
+		icon = generic_political_discourse
+		priority = 10
+		fire_only_once = no
+		days_mission_timeout = USB_congress_timer_var
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				has_completed_focus = USB_rebirth
+			}
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_pro_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_pro_greater_than_or_equals = yes
+				}
+				country_event = {
+					id = usb.2
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_neo_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_neo_greater_than_or_equals = yes
+				}
+				country_event = {
+					id = usb.3
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_con_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_con_greater_than_or_equals = yes
+					has_idea = USB_neo_spending_bill_idea
+					NOT = {
+						has_idea = USB_pro_spending_bill_idea
+					}
+				}
+				random_list = {
+					25 = {
+						country_event = {
+							id = usb.4
+						}
+					}
+					75 = {
+						country_event = {
+							id = usb.400
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_con_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_con_greater_than_or_equals = yes
+					has_idea = USB_pro_spending_bill_idea
+					NOT = {
+						has_idea = USB_neo_spending_bill_idea
+					}
+				}
+				random_list = {
+					50 = {
+						country_event = {
+							id = usb.4
+						}
+					}
+					50 = {
+						country_event = {
+							id = usb.400
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_con_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_con_greater_than_or_equals = yes
+					NOT = {
+						has_idea = USB_pro_spending_bill_idea
+						has_idea = USB_neo_spending_bill_idea
+					}
+				}
+				country_event = {
+					id = usb.400
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_con_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_con_greater_than_or_equals = yes
+					has_idea = USB_pro_spending_bill_idea
+					has_idea = USB_neo_spending_bill_idea
+				}
+				country_event = {
+					id = usb.4
+				}
+			}
+			if = {
+				limit = {
+					set_temp_variable = {
+						var = USB_influence_ino_trigger_temp
+						value = 0.33
+					}
+					USB_has_influence_ino_greater_than_or_equals = yes
+				}
+				country_event = {
+					id = usb.31
+				}
+			}
+			else = {
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							NOT = {
+								has_country_flag = USB_progressive_enable_flag
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								check_variable = {
+									USB_influence_pro_var = USB_influence_ino_var
+								}
+								check_variable = {
+									USB_influence_pro_var = USB_influence_neo_var
+								}
+								check_variable = {
+									USB_influence_pro_var = USB_influence_con_var
+								}
+							}
+						}
+						set_temp_variable = {
+							var = USB_influence_pro_var_temp
+							value = 0.075
+						}
+						USB_add_influence_pro = yes
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							NOT = {
+								has_country_flag = USB_liberal_enable_flag
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								check_variable = {
+									USB_influence_neo_var = USB_influence_pro_var
+								}
+								check_variable = {
+									USB_influence_neo_var = USB_influence_ino_var
+								}
+								check_variable = {
+									USB_influence_neo_var = USB_influence_con_var
+								}
+							}
+						}
+						set_temp_variable = {
+							var = USB_influence_neo_var_temp
+							value = 0.075
+						}
+						USB_add_influence_neo = yes
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							NOT = {
+								has_country_flag = USB_conservative_enable_flag
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								check_variable = {
+									USB_influence_con_var = USB_influence_pro_var
+								}
+								check_variable = {
+									USB_influence_con_var = USB_influence_neo_var
+								}
+								check_variable = {
+									USB_influence_con_var = USB_influence_ino_var
+								}
+							}
+						}
+						set_temp_variable = {
+							var = USB_influence_con_var_temp
+							value = 0.075
+						}
+						USB_add_influence_con = yes
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							NOT = {
+								has_country_flag = USB_innovationist_enable_flag
+							}
+						}
+						modifier = {
+							factor = 2
+							OR = {
+								check_variable = {
+									USB_influence_ino_var = USB_influence_pro_var
+								}
+								check_variable = {
+									USB_influence_ino_var = USB_influence_neo_var
+								}
+								check_variable = {
+									USB_influence_ino_var = USB_influence_con_var
+								}
+							}
+						}
+						set_temp_variable = {
+							var = USB_influence_ino_var_temp
+							value = 0.075
+						}
+						USB_add_influence_ino = yes
+					}
+				}
+			}
+			activate_mission = USB_congressional_session_mission
+		}
+	}
+	USB_civil_unrest_mission = {
+		icon = revolt
+		priority = 9
+		days_mission_timeout = 69
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			has_stability < 0.2
+			USC = { exists = yes }
+			NOT = {
+				has_completed_focus = USB_rebirth
+			}
+		}
+		available = {
+			OR = {
+				NOT = {
+					has_stability < 0.2
+				}
+				USB_has_civil_unrest = no
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = USB_uprising_imminent_tooltip
+			country_event = {
+				id = usb.11
+			}
+		}
+	}
+	USB_corporate_influence_mission = {
+		icon = revolt
+		priority = 9
+		days_mission_timeout = 69
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_completed_focus = USB_nationalize_the_war_effort
+				has_completed_focus = USB_a_hand_on_our_shoulder
+				hidden_trigger = {
+					has_completed_focus = USB_rebirth
+				}
+			}
+		}
+		cancel_effect = {
+			if = {
+				limit = {
+					has_completed_focus = USB_the_unification_deal
+				}
+				add_political_power = 150
+			}
+			else = {
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = -0.2
+				}
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = {
+				var = USB_corporate_influence_var_temp
+				value = 0.05
+			}
+			USB_add_corporate_influence = yes
+			activate_mission = USB_corporate_influence_mission
+		}
+	}
+	USB_lobby_for_pro_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_negotiate_with_progressives
+			has_country_flag = USB_progressive_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 1
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 20
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = 0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = 0.05
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.05
+			}
+			USB_add_support_pro = yes
+		}
+	}
+	USB_lobby_against_pro_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_secure_the_capital
+			has_country_flag = USB_progressive_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.25
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_democrat_drift = -0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.075
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = -0.05
+			}
+			USB_add_support_pro = yes
+		}
+	}
+	USB_lobby_for_neo_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_deals_with_liberals
+			has_country_flag = USB_liberal_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 1
+			}
+			USB_has_influence_neo_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 20
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = 0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_neo_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_neo_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = 0.05
+			}
+			USB_add_influence_neo = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.05
+			}
+			USB_add_support_neo = yes
+		}
+	}
+	USB_lobby_against_neo_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_secure_the_capital
+			has_country_flag = USB_liberal_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.25
+			}
+			USB_has_influence_neo_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			social_liberal_drift = -0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.075
+			}
+			USB_add_influence_neo = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.05
+			}
+			USB_add_support_neo = yes
+		}
+	}
+	USB_lobby_for_con_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_consolidate_the_conservatives
+			has_country_flag = USB_conservative_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 1
+			}
+			USB_has_influence_con_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 20
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			conservative_drift = 0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_con_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_con_var_temp
+				value = 0.05
+			}
+			USB_add_influence_con = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = 0.05
+			}
+			USB_add_support_con = yes
+		}
+	}
+	USB_lobby_against_con_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_secure_the_capital
+			has_country_flag = USB_conservative_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.25
+			}
+			USB_has_influence_con_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			conservative_drift = -0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_con_var_temp
+				value = -0.075
+			}
+			USB_add_influence_con = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.05
+			}
+			USB_add_support_con = yes
+		}
+	}
+	USB_lobby_for_ino_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_work_with_the_innovationists
+			has_country_flag = USB_innovationist_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 1
+			}
+			USB_has_influence_ino_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 20
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			authoritarian_democrat_drift = 0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_ino_var_temp
+				value = 0.05
+			}
+			USB_add_influence_ino = yes
+			set_temp_variable = {
+				var = USB_support_ino_var_temp
+				value = 0.05
+			}
+			USB_add_support_ino = yes
+		}
+	}
+	USB_lobby_against_ino_decision = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_secure_the_capital
+			has_country_flag = USB_innovationist_enable_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_ino_trigger_temp
+				value = 0.25
+			}
+			USB_has_influence_ino_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 10
+		days_remove = 35
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+			authoritarian_democrat_drift = -0.02
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 49
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_influence_ino_var_temp
+				value = -0.075
+			}
+			USB_add_influence_ino = yes
+			set_temp_variable = {
+				var = USB_support_ino_var_temp
+				value = -0.05
+			}
+			USB_add_support_ino = yes
+		}
+	}
+	USB_nationalize_the_railways = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_nationalize_critical_infrastructure
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.5
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 35
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 35
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.07
+			}
+			USB_add_support_neo = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.1
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+				add_to_variable = {
+					var = USB_gnd_production_speed_rail_way_factor_dynamic_var
+					value = 0.15
+				}
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.05
+			}
+			USB_add_influence_pro = yes
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_green_new_deal_progressive_dummy_idea
+					add_idea = USB_nationalized_railways
+				}
+			}
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 100
+			}
+			add_debt = yes
+		}
+	}
+	USB_nationalize_higher_education = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_nationalize_critical_infrastructure
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.4
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 35
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 35
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.05
+			}
+			USB_add_support_neo = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			add_ideas = high_education
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.05
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 200
+			}
+			add_debt = yes
+		}
+	}
+	USB_nationalize_construction_industries = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_nationalize_critical_infrastructure
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.5
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 35
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 35
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.05
+			}
+			USB_add_support_neo = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+				add_to_variable = {
+					var = USB_gnd_production_speed_industrial_complex_factor_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = USB_gnd_production_speed_arms_factory_factor_dynamic_var
+					value = 0.1
+				}
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_green_new_deal_progressive_dummy_idea
+					add_idea = USB_nationalize_construction_industries
+				}
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.05
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 100
+			}
+			add_debt = yes
+		}
+	}
+	USB_build_low_income_housing = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_nationalize_critical_infrastructure
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.45
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 30
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = -0.03
+			}
+			USB_add_support_neo = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.05
+			}
+			add_poverty_development = yes
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.03
+			}
+			USB_add_influence_pro = yes
+			random_owned_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 5
+			}
+			add_debt = yes
+		}
+	}
+	USB_request_un_humanitarian_aid = {
+		icon = GFX_UN_Aid
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			OR = {
+				has_completed_focus = USB_fight_nationwide_hunger
+				has_completed_focus = USB_appeal_to_the_un
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 25
+		days_re_enable = 25
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 25
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.03
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.02
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.03
+			}
+			add_poverty_development = yes
+			add_war_support = 0.05
+		}
+	}
+	USB_construct_refugee_camps = {
+		icon = GFX_Refugee_camps
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			OR = {
+				has_completed_focus = USB_fight_nationwide_hunger
+				has_completed_focus = USB_appeal_to_the_un
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+			any_state = {
+				NOT = {
+					has_state_flag = industrial_renovation_state
+				}
+				free_building_slots = {
+					building = infrastructure
+					size < 2
+				}
+				is_fully_controlled_by = ROOT
+				is_owned_by = ROOT
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 35
+		days_remove = 35
+		days_re_enable = 50
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 35
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.05
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.03
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = 0.03
+			}
+			add_poverty_development = yes
+			add_stability = 0.05
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USB_request_un_peacekeepers = {
+		icon = GFX_UN_Peacekeepers
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			OR = {
+				has_completed_focus = USB_fight_nationwide_hunger
+				has_completed_focus = USB_appeal_to_the_un
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 25
+		days_re_enable = 75
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 25
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.05
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.03
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.03
+			}
+			USB_add_influence_neo = yes
+			add_stability = 0.03
+			random_controlled_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_resistance = -10
+				create_unit = {
+					division = "name = \"UN Peacekeepers\" division_template = \"Volunteer Militia\"  start_experience_factor = 0.3"
+					allow_spawning_on_enemy_provs = yes
+					owner = ROOT
+				}
+			}
+		}
+	}
+	USB_gun_buyback = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_safer_communities_act
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 28
+		days_re_enable = 14
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = USB_dealing_with_pro_flag
+				set_country_flag = {
+					flag = USA_political_action_flag
+					days = 25
+					value = 1
+				}
+			}
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = -0.02
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = USB_dealing_with_pro_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.01
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.01
+			}
+			USB_add_influence_neo = yes
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = USB
+			}
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 0.5
+			}
+			add_debt = yes
+		}
+	}
+	USB_fight_corporate_influence_decision = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_negotiate_with_progressives
+			NOT = {
+				has_completed_focus = USB_a_hand_on_our_shoulder
+				has_completed_focus = USB_nationalize_the_war_effort
+			}
+		}
+		available = {
+			NOT = {
+				has_idea = USB_lower_corporate_influence_idea
+				#has_country_flag = USB_corporate_halt_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_pro_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 7
+		days_re_enable = 35
+		modifier = {
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = USB_influence_pro_var_temp
+				value = -0.1
+			}
+			USB_add_influence_pro = yes
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = 0.05
+			}
+			USB_add_support_pro = yes
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_corporate_influence_var_temp
+				value = -0.05
+			}
+			USB_add_corporate_influence = yes
+		}
+	}
+	USB_spread_corporate_influence_decision = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_work_with_the_innovationists
+			NOT = {
+				has_completed_focus = USB_a_hand_on_our_shoulder
+				has_completed_focus = USB_nationalize_the_war_effort
+			}
+		}
+		available = {
+			NOT = {
+				has_idea = USB_higher_corporate_influence_idea
+				has_country_flag = USB_corporate_halt_flag
+			}
+			set_temp_variable = {
+				var = USB_influence_pro_trigger_temp
+				value = 0.3
+			}
+			USB_has_influence_pro_less_than = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 7
+		days_re_enable = 35
+		modifier = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = USB_corporate_actions_halted_70_tooltip
+			set_country_flag = {
+				flag = USB_corporate_halt_flag
+				days = 70
+				value = 1
+			}
+			set_temp_variable = {
+				var = USB_support_pro_var_temp
+				value = -0.05
+			}
+			USB_add_support_pro = yes
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = USB_corporate_influence_var_temp
+				value = -0.1
+			}
+			USB_add_corporate_influence = yes
+		}
+	}
+	USB_refresh_liberties_decision = {
+		icon = hol_war_on_pacifism
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_deals_with_liberals
+		}
+		available = {
+			NOT = {
+				has_idea = USB_lower_restricted_liberties_idea
+			}
+			set_temp_variable = {
+				var = USB_influence_neo_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_neo_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 7
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = USB_influence_neo_var_temp
+				value = -0.1
+			}
+			USB_add_influence_neo = yes
+			set_temp_variable = {
+				var = USB_support_neo_var_temp
+				value = 0.025
+			}
+			USB_add_support_neo = yes
+		}
+		remove_effect = {
+			USB_decrease_restricted_liberties = yes
+		}
+	}
+	USB_crush_crime_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_consolidate_the_conservatives
+		}
+		available = {
+			NOT = {
+				has_idea = USB_lower_civilian_unrest_idea
+			}
+			set_temp_variable = {
+				var = USB_influence_con_trigger_temp
+				value = 0.1
+			}
+			USB_has_influence_con_greater_than_or_equals = yes
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 7
+		days_re_enable = 35
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = USB_influence_con_var_temp
+				value = -0.1
+			}
+			USB_add_influence_con = yes
+			set_temp_variable = {
+				var = USB_support_con_var_temp
+				value = 0.025
+			}
+			USB_add_support_con = yes
+		}
+		remove_effect = {
+			USB_decrease_civilian_unrest = yes
+		}
+	}
+	USB_promote_corporate_development = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_blur_the_public_private_lines
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 140
+		cancel_if_not_visible = yes
+		modifier = {
+			production_speed_buildings_factor = 0.15
+			consumer_goods_factor = -0.05
+		}
+		complete_effect = {
+			add_war_support = -0.05
+		}
+		remove_effect = {
+		}
+	}
+	USB_financialized_agriculture = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_pro_market_interventionism
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 140
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_gain = -0.1
+			resistance_activity = 0.15
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = farming_development_var_temp
+				value = 0.2
+			}
+			add_farming_development = yes
+			896 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			362 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			1251 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			1004 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			1255 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			360 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	USB_absorb_small_buisnesses = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_pro_market_interventionism
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 140
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_gain = -0.1
+			resistance_activity = 0.15
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = industrial_development_var_temp
+				value = 0.2
+			}
+			add_industrial_development = yes
+			set_temp_variable = {
+				var = poverty_development_var_temp
+				value = -0.2
+			}
+			add_poverty_development = yes
+			1069 = {
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+			931 = {
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+			1068 = {
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+			1070 = {
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+			1246 = {
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USB_subsidize_military_contractors = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_pro_market_interventionism
+		}
+		available = {
+			NOT = {
+				has_country_flag = USA_political_action_flag
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 140
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_gain = -0.1
+			resistance_activity = 0.15
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			set_temp_variable = {
+				var = military_development_var_temp
+				value = 0.2
+			}
+			add_military_development = yes
+			1069 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			931 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1068 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1070 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USB_release_epx = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+		}
+		available = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			896 = {
+				is_fully_controlled_by = USB
+			}
+			362 = {
+				is_fully_controlled_by = USB
+			}
+			1007 = {
+				is_fully_controlled_by = USB
+			}
+			1006 = {
+				is_fully_controlled_by = USB
+			}
+			1255 = {
+				is_fully_controlled_by = USB
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_country_flag = USB_released_epx
+		}
+		ai_will_do = {
+			base = 200
+		}
+		remove_effect = {
+			EPX = {
+				transfer_state = 896
+				transfer_state = 362
+				transfer_state = 1007
+				transfer_state = 1006
+				transfer_state = 1255
+			}
+			add_resource = {
+				type = oil
+				amount = 100
+				state = 896
+			}
+			add_resource = {
+				type = oil
+				amount = 50
+				state = 1006
+			}
+			puppet = EPX
+		}
+	}
+	USB_expand_epx = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			has_country_flag = USB_released_epx
+		}
+		available = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			946 = {
+				is_fully_controlled_by = USB
+			}
+			963 = {
+				is_fully_controlled_by = USB
+			}
+			965 = {
+				is_fully_controlled_by = USB
+			}
+			968 = {
+				is_fully_controlled_by = USB
+			}
+			374 = {
+				is_fully_controlled_by = USB
+			}
+			1175 = {
+				is_fully_controlled_by = USB
+			}
+			1239 = {
+				is_fully_controlled_by = USB
+			}
+			389 = {
+				is_fully_controlled_by = USB
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+		}
+		ai_will_do = {
+			base = 200
+		}
+		remove_effect = {
+			EPX = {
+				transfer_state = 946
+				transfer_state = 963
+				transfer_state = 964
+				transfer_state = 965
+				transfer_state = 968
+				transfer_state = 374
+				transfer_state = 1175
+				transfer_state = 1239
+				transfer_state = 389
+			}
+			add_resource = {
+				type = oil
+				amount = 50
+				state = 389
+			}
+			add_resource = {
+				type = oil
+				amount = 50
+				state = 1239
+			}
+			hidden_effect = {
+				give_resource_rights = {
+					receiver = USB
+					state = 946
+					resources = {
+						oil
+					}
+				}
+				give_resource_rights = {
+					receiver = USB
+					state = 963
+					resources = {
+						oil
+					}
+				}
+				give_resource_rights = {
+					receiver = USB
+					state = 965
+					resources = {
+						oil
+					}
+				}
+				give_resource_rights = {
+					receiver = USB
+					state = 968
+					resources = {
+						oil
+					}
+				}
+			}
+		}
+	}
+	USB_release_nex = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+		}
+		available = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			1173 = {
+				is_fully_controlled_by = USB
+			}
+			1069 = {
+				is_fully_controlled_by = USB
+			}
+			359 = {
+				is_fully_controlled_by = USB
+			}
+			1116 = {
+				is_fully_controlled_by = USB
+			}
+			918 = {
+				is_fully_controlled_by = USB
+			}
+			358 = {
+				is_fully_controlled_by = USB
+			}
+			1077 = {
+				is_fully_controlled_by = USB
+			}
+			795 = {
+				is_fully_controlled_by = USB
+			}
+			357 = {
+				is_fully_controlled_by = USB
+			}
+			1078 = {
+				is_fully_controlled_by = USB
+			}
+			794 = {
+				is_fully_controlled_by = USB
+			}
+			1080 = {
+				is_fully_controlled_by = USB
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_country_flag = USB_released_epx
+		}
+		ai_will_do = {
+			base = 200
+		}
+		remove_effect = {
+			NEX = {
+				transfer_state = 1173
+				transfer_state = 1069
+				transfer_state = 359
+				transfer_state = 1116
+				transfer_state = 918
+				transfer_state = 358
+				transfer_state = 1077
+				transfer_state = 795
+				transfer_state = 357
+				transfer_state = 1078
+				transfer_state = 794
+				transfer_state = 1080
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			puppet = NEX
+		}
+	}
+	USB_release_apx = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+		}
+		available = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			1241 = {
+				is_fully_controlled_by = USB
+			}
+			984 = {
+				is_fully_controlled_by = USB
+			}
+			1242 = {
+				is_fully_controlled_by = USB
+			}
+			934 = {
+				is_fully_controlled_by = USB
+			}
+			383 = {
+				is_fully_controlled_by = USB
+			}
+			1133 = {
+				is_fully_controlled_by = USB
+			}
+			1237 = {
+				is_fully_controlled_by = USB
+			}
+			1238 = {
+				is_fully_controlled_by = USB
+			}
+			384 = {
+				is_fully_controlled_by = USB
+			}
+			390 = {
+				is_fully_controlled_by = USB
+			}
+			388 = {
+				is_fully_controlled_by = USB
+			}
+			1087 = {
+				is_fully_controlled_by = USB
+			}
+			1088 = {
+				is_fully_controlled_by = USB
+			}
+			1146 = {
+				is_fully_controlled_by = USB
+			}
+			1147 = {
+				is_fully_controlled_by = USB
+			}
+			381 = {
+				is_fully_controlled_by = USB
+			}
+			1144 = {
+				is_fully_controlled_by = USB
+			}
+			1145 = {
+				is_fully_controlled_by = USB
+			}
+			382 = {
+				is_fully_controlled_by = USB
+			}
+			1145 = {
+				is_fully_controlled_by = USB
+			}
+			967 = {
+				is_fully_controlled_by = USB
+			}
+			1134 = {
+				is_fully_controlled_by = USB
+			}
+			1125 = {
+				is_fully_controlled_by = USB
+			}
+			373 = {
+				is_fully_controlled_by = USB
+			}
+			1124 = {
+				is_fully_controlled_by = USB
+			}
+			1106 = {
+				is_fully_controlled_by = USB
+			}
+			372 = {
+				is_fully_controlled_by = USB
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_country_flag = USB_released_epx
+		}
+		ai_will_do = {
+			base = 200
+		}
+		remove_effect = {
+			APX = {
+				transfer_state = 984
+				transfer_state = 1242
+				transfer_state = 934
+				transfer_state = 383
+				transfer_state = 1133
+				transfer_state = 1241
+				transfer_state = 1237
+				transfer_state = 1238
+				transfer_state = 384
+				transfer_state = 390
+				transfer_state = 388
+				transfer_state = 1087
+				transfer_state = 1088
+				transfer_state = 1146
+				transfer_state = 1147
+				transfer_state = 381
+				transfer_state = 1144
+				transfer_state = 1145
+				transfer_state = 382
+				transfer_state = 967
+				transfer_state = 1134
+				transfer_state = 1125
+				transfer_state = 373
+				transfer_state = 1124
+				transfer_state = 1106
+				transfer_state = 372
+			}
+			puppet = APX
+		}
+	}
+	USB_release_pdx = {
+		icon = generic_political_rally
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+		}
+		available = {
+			has_completed_focus = USB_establish_corporate_governance_zones
+			952 = {
+				is_fully_controlled_by = USB
+			}
+			930 = {
+				is_fully_controlled_by = USB
+			}
+			1298 = {
+				is_fully_controlled_by = USB
+			}
+			944 = {
+				is_fully_controlled_by = USB
+			}
+			943 = {
+				is_fully_controlled_by = USB
+			}
+			949 = {
+				is_fully_controlled_by = USB
+			}
+			1039 = {
+				is_fully_controlled_by = USB
+			}
+			932 = {
+				is_fully_controlled_by = USB
+			}
+			942 = {
+				is_fully_controlled_by = USB
+			}
+			941 = {
+				is_fully_controlled_by = USB
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 50
+		days_remove = 70
+		cancel_if_not_visible = yes
+		modifier = {
+		}
+		complete_effect = {
+			set_country_flag = USB_released_epx
+		}
+		ai_will_do = {
+			base = 200
+		}
+		remove_effect = {
+			PDZ = {
+				transfer_state = 952
+				transfer_state = 930
+				transfer_state = 1298
+				transfer_state = 943
+				transfer_state = 949
+				transfer_state = 358
+				transfer_state = 1039
+				transfer_state = 932
+				transfer_state = 942
+				transfer_state = 941
+				transfer_state = 944
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = office_park
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = office_park
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			puppet = PDZ
+		}
+	}
+}
+
+#USB_fighting_for_democracy_category = {
+#	USB_develop_the_military_decision = {
+#		icon = generic_construction
+#		cost = 25
+#		fire_only_once = no
+#		days_remove = 14
+#		days_re_enable = 56
+#		allowed = {
+#			tag = USB
+#		}
+#		available = {
+#		}
+#		ai_will_do = {
+#			base = 3
+#		}
+#		remove_effect = {
+#			set_temp_variable = {
+#				var = military_development_var_temp
+#				value = 0.05
+#			}
+#			add_military_development = yes
+#		}
+#	}
+#}
+
+USA_recoring_category = {
+	USB_enforce_compliance_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_state_of_emergency
+		}
+		available = {
+			any_controlled_state = {
+				is_claimed_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 0
+		days_remove = 70
+		cancel_if_not_visible = yes
+		custom_cost_text = USB_enforce_compliance_decision_cost
+		custom_cost_trigger = {
+			NOT = {
+				has_stability < 0.05
+			}
+		}
+		modifier = {
+			compliance_gain = 0.01
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_stability = -0.05
+			}
+		}
+		remove_effect = {
+		}
+	}
+}
+
+USB_appalachain_insurgency = {
+	USB_insurgency_recruiting = {
+		icon = GFX_decision_border_war
+		visible = {
+			has_country_flag = USB_wv_insurgency
+		}
+		available = {
+			NOT = {
+				has_country_flag = USB_wv_insurgency
+			}
+		}
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+		cancel_if_not_visible = yes
+		is_good = no
+		fire_only_once = no
+		selectable_mission = no
+		days_mission_timeout = 90
+		timeout_effect = {
+			add_to_variable = {
+				var = USB_insurgency_level
+				value = 1
+				tooltip = add_insurgency_to_1_tt
+			}
+			896 = {
+				add_resistance = 5
+			}
+			random_state = {
+				limit = {
+					has_state_flag = USB_insurgency_cores
+				}
+				add_resistance = 2
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 4
+						compare = greater_than_or_equals
+					}
+				}
+				random_list = {
+					75 = {
+						activate_mission = USB_insurgency_sabotage
+					}
+					25 = {
+						activate_mission = USB_insurgency_recruiting
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 3
+						compare = greater_than_or_equals
+					}
+				}
+				random_list = {
+					50 = {
+						activate_mission = USB_insurgency_sabotage
+					}
+					50 = {
+						activate_mission = USB_insurgency_recruiting
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+				random_list = {
+					25 = {
+						activate_mission = USB_insurgency_sabotage
+					}
+					75 = {
+						activate_mission = USB_insurgency_recruiting
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 1
+					}
+				}
+				activate_mission = USB_insurgency_sabotage
+			}
+			else = {
+				activate_mission = USB_insurgency_sabotage
+			}
+		}
+	}
+	USB_insurgency_sabotage = {
+		icon = GFX_decision_border_war
+		visible = {
+			has_country_flag = USB_wv_insurgency
+			USC = {
+				exists = yes
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = USB_wv_insurgency
+			}
+		}
+		cancel_trigger = {
+			set_temp_variable = {
+				var = USB_wv_insurgency_level_var_temp
+				value = 85
+			}
+			USB_wv_insurgency_greater_than = yes
+		}
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+		cancel_if_not_visible = yes
+		is_good = no
+		fire_only_once = no
+		selectable_mission = no
+		days_mission_timeout = 30
+		timeout_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 4
+						compare = greater_than_or_equals
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				896 = {
+					#transfer_state_to = USC
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 3
+						compare = greater_than_or_equals
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				896 = {
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				896 = {
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						var = USB_insurgency_level
+						value = 1
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						has_state_flag = USB_insurgency_cores
+					}
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				896 = {
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			else = {
+				896 = {
+					create_unit = {
+						division = "name = \"Insurgent Army\" division_template = \"Insurgent Army\" start_experience_factor = 0.15 start_equipment_factor = 0.8"
+						owner = USC
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			activate_mission = USB_insurgency_recruiting
+		}
+	}
+	USB_crackdown_on_insurgency_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			896 = {
+				has_resistance = yes
+			}
+		}
+		available = {
+			divisions_in_state = {
+				type = infantry
+				size > 4
+				state = 896
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 70
+		cancel_if_not_visible = yes
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		custom_cost_text = 30cp_cost
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			896 = {
+				add_resistance = -10
+			}
+			random_state = {
+				limit = {
+					has_state_flag = USB_insurgency_cores
+				}
+				add_resistance = -2
+			}
+		}
+	}
+	USB_foil_the_insurgency_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			896 = {
+				has_resistance = yes
+			}
+		}
+		available = {
+			divisions_in_state = {
+				type = infantry
+				size > 4
+				state = 896
+			}
+			network_strength = {
+				target = USC
+				value < 40
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 14
+		cancel_if_not_visible = yes
+		cost = 15
+		remove_effect = {
+			if = {
+				limit = {
+					has_active_mission = USB_insurgency_recruiting
+				}
+				add_days_mission_timeout = {
+					mission = USB_insurgency_recruiting
+					days = 60
+				}
+			}
+			else_if = {
+				limit = {
+					has_active_mission = USB_insurgency_sabotage
+				}
+				remove_mission = USB_insurgency_sabotage
+				activate_mission = USB_insurgency_recruiting
+			}
+			else = {
+				add_stability = 0.05
+			}
+		}
+	}
+	USB_aid_the_populace_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			896 = {
+				has_resistance = yes
+			}
+		}
+		available = {
+			divisions_in_state = {
+				type = infantry
+				size > 4
+				state = 896
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		days_remove = 70
+		cancel_if_not_visible = yes
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		custom_cost_text = decision_cost_civ_factory_3
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_stability = 0.05
+			896 = {
+				add_compliance = 10
+			}
+			random_state = {
+				limit = {
+					has_state_flag = USB_insurgency_cores
+				}
+				add_compliance = 2
+			}
+		}
+	}
+	USB_end_the_insurgency_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			896 = {
+				resistance < 20
+			}
+		}
+		available = {
+			divisions_in_state = {
+				type = infantry
+				size > 4
+				state = 896
+			}
+			USC = {
+				OR = {
+					has_capitulated = yes
+					surrender_progress > 0.8
+				}
+			}
+			896 = {
+				OR = {
+					resistance < 10
+					compliance > 80
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 0
+		days_remove = 70
+		cancel_if_not_visible = yes
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		custom_cost_text = 30cp_cost
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			add_stability = 0.1
+			clr_country_flag = USB_wv_insurgency
+			remove_mission = USB_insurgency_recruiting
+			remove_mission = USB_insurgency_sabotage
+			country_event = {
+				id = usb.28
+			}
+			every_state = {
+				limit = {
+					OR = {
+						has_state_flag = USB_insurgency_cores
+						has_state_flag = USB_home_state
+					}
+				}
+				add_core_of = USB
+				remove_core_of = USC
+				clr_state_flag = USB_insurgency_cores
+				clr_state_flag = USB_home_state
+			}
+		}
+	}
+}
+
+USB_treason_punishable_by_death_category = {
+	USB_sanders_conspiracy_mission = {
+		icon = revolt
+		priority = 9
+		days_mission_timeout = 28
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		cancel_trigger = {
+		}
+		cancel_effect = {
+			add_political_power = 150
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -1
+			}
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					social_democrat > 0.45
+				}
+				custom_effect_tooltip = USB_caligula_collapse_tt
+				hidden_effect = {
+					country_event = {
+						id = bdnspch.116
+						days = 5
+					}
+				}
+			}
+			else = {
+				add_war_support = -0.05
+				add_popularity = {
+					ideology = social_democrat
+					popularity = 0.03
+				}
+				activate_mission = USB_sanders_conspiracy_mission
+			}
+		}
+	}
+	USB_bloomberg_conspiracy_mission = {
+		icon = revolt
+		priority = 9
+		days_mission_timeout = 28
+		is_good = no
+		fixed_random_seed = no
+		allowed = {
+			tag = USB
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+		}
+		cancel_effect = {
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					authoritarian_democrat > 0.45
+				}
+				custom_effect_tooltip = USB_caligula_collapse_tt
+				hidden_effect = {
+					country_event = {
+						id = bdnspch.117
+						days = 5
+					}
+				}
+			}
+			else = {
+				set_temp_variable = {
+					var = USB_corporate_influence_var_temp
+					value = 0.05
+				}
+				USB_add_corporate_influence = yes
+				add_stability = -0.05
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.03
+				}
+				activate_mission = USB_bloomberg_conspiracy_mission
+			}
+		}
+	}
+	USB_fight_bernie_sanders_decision = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+			has_active_mission = USB_sanders_conspiracy_mission
+		}
+		available = {
+
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25 
+		days_remove = 7
+		days_re_enable = 7
+		modifier = {
+			social_democrat_drift = -0.1
+			weekly_manpower = -1000
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.025
+			}
+		}
+	}
+	USB_fight_corporate_influence_caligula_decision = {
+		icon = generic_industry
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+			has_active_mission = USB_bloomberg_conspiracy_mission
+		}
+		available = {
+
+		}
+		ai_will_do = {
+			base = 2
+		}
+		cost = 25
+		days_remove = 7
+		days_re_enable = 7
+		modifier = {
+			authoritarian_democrat_drift = -0.1
+			weekly_manpower = -1000
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.025
+			}
+			set_temp_variable = {
+				var = USB_corporate_influence_var_temp
+				value = -0.1
+			}
+			USB_add_corporate_influence = yes
+		}
+	}
+	USB_kamala_meets_her_maker_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_the_enemy_within
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 75
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.1
+			}
+			add_stability = -0.04
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_kamala_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = vacant_hog
+				add_to_variable = {
+					var = USB_tt_political_power_gain_dynamic_var
+					value = 0.01
+				}
+				add_to_variable = {
+					var = USB_tt_soc_dev_dynamic_var
+					value = 0.01
+				}
+				add_to_variable = {
+					var = USB_tt_drift_defense_factor_dynamic_var
+					value = 0.1
+				}
+			}
+		}
+	}
+	USB_send_bernie_to_the_dungeon_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_the_enemy_within
+		}
+		available = {
+			has_country_flag = USB_caligula_fbi_secured_flag
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 75
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			remove_mission = USB_sanders_conspiracy_mission 
+			remove_ideas = USB_sanderite_conspiracy_idea
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.02
+			}
+			add_stability = -0.02
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_bernie_idea
+				}
+			}
+			country_event = {
+				id = bdnspch.119
+				days = 3
+			}
+		}
+	}
+	USB_end_of_the_line_for_mitt_romney_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_the_enemy_within
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 75
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.04
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = conservative
+				popularity = -1
+			}
+			add_stability = -0.01
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_romney_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = USB_tt_political_power_gain_dynamic_var
+					value = 0.01
+				}
+				add_to_variable = {
+					var = USB_tt_mob_laws_cost_dynamic_var
+					value = -0.5
+				}
+				add_to_variable = {
+					var = USB_tt_consumer_goods_factor_dynamic_var
+					value = -0.05
+				}
+				add_to_variable = {
+					var = USB_tt_tax_buisness_Rate_dynamic_var
+					value = 0.05
+				}
+			}
+		}
+	}
+	USB_death_to_micheal_bloomberg_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_the_enemy_within
+		}
+		available = {
+			has_country_flag = USB_caligula_finances_secured_flag
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 75
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			remove_mission = USB_bloomberg_conspiracy_mission 
+			remove_ideas = USB_bloomberg_conspiracy_idea
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.01
+			}
+			add_stability = -0.01
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_bloomberg_idea
+				}
+			}
+			country_event = {
+				id = bdnspch.120
+				days = 3
+			}
+			hidden_effect = {
+				remove_ideas = {
+					USB_lower_corporate_influence_idea
+					USB_low_corporate_influence_idea
+					USB_medium_corporate_influence_idea
+					USB_high_corporate_influence_idea
+					USB_higher_corporate_influence_idea
+				}
+				add_to_variable = {
+					var = USB_tt_academic_development_monthly_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_tt_research_speed_factor_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = USB_tt_personal_expense_factor_dynamic_var
+					value = 0.075
+				}
+			}
+		}
+	}
+	USB_cut_off_blinken_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.05
+			}
+			add_stability = 0.035
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_blinken_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = vacant_for
+				add_to_variable = {
+					var = USB_tt_political_power_gain_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = USB_tt_mil_factory_upkeep_dynamic_var
+					value = -0.15
+				}
+				add_to_variable = {
+					var = USB_tt_max_planning_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = USB_tt_mob_speed_dynamic_var
+					value = 0.05
+				}
+			}
+		}
+	}
+	USB_shut_down_yellen_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			set_country_flag = USB_caligula_finances_secured_flag
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.05
+			}
+			add_stability = 0.025
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_yellen_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = vacant_eco
+				add_to_variable = {
+					var = USB_tt_industrial_capacity_factory_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = USB_tt_inflation_monthly_dynamic_var
+					value = -0.001
+				}
+				add_to_variable = {
+					var = USB_tt_income_growth_factor_dynamic_var
+					value = 0.075
+				}
+				add_to_variable = {
+					var = USB_tt_prod_eff_gain_dynamic_var
+					value = 0.025
+				}
+			}
+		}
+	}
+	USB_end_haalands_reforms_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			set_country_flag = USB_caligula_fbi_secured_flag
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.05
+			}
+			add_stability = -0.025
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_haaland_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = vacant_sec
+				add_to_variable = {
+					var = USB_tt_root_resistance_eff_dynamic_var
+					value = 0.15
+				}
+				add_to_variable = {
+					var = USB_tt_soc_dev_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_tt_political_power_gain_dynamic_var
+					value = 0.01
+				}
+			}
+		}
+	}
+	USB_kill_off_haines_decision = {
+		icon = generic_arrest
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_completed_focus = USB_begin_the_treason_trials
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 50
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.01
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = social_liberal
+				popularity = -0.05
+			}
+			add_stability = -0.035
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = USB_treason_trial_dummy_idea
+					add_idea = USB_treason_trial_kill_haines_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = vacant_int
+				add_to_variable = {
+					var = USB_tt_intel_net_gain_dynamic_var
+					value = 0.25
+				}
+				add_to_variable = {
+					var = USB_tt_agency_upgrade_time_dynamic_var
+					value = -0.1
+				}
+				add_to_variable = {
+					var = USB_tt_crypto_streanght_dynamic_var
+					value = 0.2
+				}
+				add_to_variable = {
+					var = USB_tt_political_power_gain_dynamic_var
+					value = 0.025
+				}
+			}
+		}
+	}
+}
+
+debug_decisions = {
+	USB_decrease_biden_health_debug_decision = {
+		icon = generic_ignite_civil_war
+		allowed = {
+			original_tag = USB
+		}
+		visible = {
+			has_country_leader = {
+				character = USB_joe_biden_char
+				ruling_only = yes
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+		}
+		complete_effect = {
+			USB_decrease_biden_health = yes
+		}
+		remove_effect = {
+		}
+	}
+	USB_load_corporate = {
+		icon = generic_industry
+		fire_only_once = no
+		cost = 0
+		allowed = {
+			tag = USB
+		}
+		visible = {
+			NOT = {
+				has_country_flag = USB_innovationist_enable_flag
+			}
+		}
+		ai_will_do = {
+			base = 0
+		}
+		complete_effect = {
+			country_event = {
+				id = usb.19
+			}
+		}
+	}
+	USB_load_caligula_debug = {
+		icon = generic_industry
+		fire_only_once = no
+		cost = 0
+		allowed = {
+			tag = USB
+		}
+		visible = {
+		}
+		ai_will_do = {
+			base = 0
+		}
+		complete_effect = {
+			set_country_flag = USB_caligula_enabled
+			country_event = {
+				id = bdnspch.999
+				days = 1
+			}
+		}
+	}
+}

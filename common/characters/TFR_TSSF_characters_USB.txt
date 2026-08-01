@@ -1,0 +1,214 @@
+characters = {
+	USB_taylor_swift = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_taylor_swift.png"
+			}
+			army = {
+			    large = "gfx/leaders/USB/USB_taylor_swift_Second_European_War.png"
+			}
+		}
+		country_leader = {
+			desc = "PRESIDENT_TS_DESC"
+			ideology = progressivism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	USB_gretchen_whitmer = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_gretchen_whitmer.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = progressivism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_dwayne_johnson = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_dwayne_johnson.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = civic_conservatism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_paul_ryan = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_paul_ryan.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = constitutionalism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_lebron_james = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_lebron_james.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = neoliberalism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_gavin_newsom = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_gavin_newsom.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = neoliberalism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_mark_cuban = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_mark_cuban.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = centrist
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_stephen_smith = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_stephen_smith.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = modern_liberalism_USB
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_dan_crenshaw = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_dan_crenshaw.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = civic_conservatism_USB
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_paul_ryan = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_paul_ryan.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = neoconservatism
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_wes_moore = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_wes_moore.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = modern_liberalism_USB
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_andy_beshear = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_andy_beshear.png"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = modern_liberalism_USB
+			traits = {
+			}
+			id = -1
+		}
+	}
+	USB_nicholas_perry = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/TheCaligula.dds"
+			}
+		}
+		country_leader = {
+			ideology = maoism
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	NCA_roy_cooper_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/NCA/NCA_roy_cooper.png"
+			}
+		}
+		country_leader = {
+			ideology = neoliberalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	USP_nina_turner_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USB/USB_nina_turner.png"
+			}
+		}
+		country_leader = {
+			ideology = progressivism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+}

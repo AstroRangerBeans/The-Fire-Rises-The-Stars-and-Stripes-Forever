@@ -1,0 +1,1160 @@
+scripted_gui = {
+	USB_congress_help_gui = {
+		context_type = decision_category
+		window_name = "USB_congress_help_gui"
+	}
+	TFR_USB_cognoscenti_gui = {
+		context_type = decision_category
+		window_name = "TFR_USB_cognoscenti_container"
+		triggers = {
+			sc_USB_NSA_paul_nakasone_visible = {
+				has_idea = USB_NSA_paul_nakasone_sc
+			}
+			sc_USB_NSA_george_barnes_visible = {
+				has_idea = USB_NSA_george_barnes_sc
+			}
+			sc_USB_NSA_jeffrey_kruse_visible = {
+				has_idea = USB_DIA_jeffrey_kruse_sc
+			}
+			sc_USB_DIA_christine_bordine_visible = {
+				has_idea = USB_DIA_christine_bordine_sc
+			}
+			sc_USB_NSA_james_comey_visible = {
+				has_idea = USB_FBI_james_comey_sc
+			}
+			sc_USB_FBI_paul_abbate_visible = {
+				has_idea = USB_FBI_paul_abbate_sc
+			}
+			sc_USB_NSA_marvin_richardson_visible = {
+				has_idea = USB_ATF_marvin_richardson_sc
+			}
+			sc_USB_ATF_gary_restaino_visible = {
+				has_idea = USB_ATF_gary_restaino_sc
+			}
+			sc_USB_NSA_anthony_fauci_visible = {
+				has_idea = USB_CDC_anthony_fauci_sc
+			}
+			sc_USB_CDC_rochelle_walensky_visible = {
+				has_idea = USB_CDC_rochelle_walensky_sc
+			}
+			sc_USB_NSA_deanne_criswell_visible = {
+				has_idea = USB_FEMA_deanne_criswell_sc
+			}
+			sc_USB_FEMA_erik_hooks_visible = {
+				has_idea = USB_FEMA_erik_hooks_sc
+			}
+			sc_USB_NSA_albert_bourla_visible = {
+				has_idea = USB_Pfizer_albert_bourla_sc
+			}
+			sc_USB_Pfizer_sally_susman_visible = {
+				has_idea = USB_Pfizer_sally_susman_sc
+			}
+			sc_USB_NSA_patrick_lechleitner_visible = {
+				has_idea = USB_ICE_patrick_lechleitner_sc
+			}
+			sc_USB_ICE_staci_barrera_visible = {
+				has_idea = USB_ICE_staci_barrera_sc
+			}
+		}
+		effects = {
+			sc_USB_NSA_paul_nakasone_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_jeffrey_kruse_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_james_comey_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_marvin_richardson_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_anthony_fauci_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_deanne_criswell_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_albert_bourla_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+				}
+			}
+			sc_USB_NSA_patrick_lechleitner_click = {
+				if = {
+					limit = {
+						has_country_flag = USB_judas_gambit_flag
+					}
+					set_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+					clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+					clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+				}
+			}
+		}
+	}
+	TFR_USB_fire_window_gui = {
+		context_type = player_context
+		window_name = "TFR_USB_fire_window_container"
+		visible = {
+			OR = {
+				has_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+				has_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+				has_country_flag = sc_USB_NSA_james_comey_remove_flag
+				has_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+				has_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+				has_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+				has_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+				has_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+			}
+		}
+		triggers = {
+			USB_fire_window_yes_button_click_enabled = {
+				has_political_power > 99
+			}
+		}
+		effects = {
+			USB_fire_window_yes_button_click = {
+				add_political_power = -100
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+					}
+					remove_ideas = USB_NSA_paul_nakasone_sc
+					add_ideas = USB_NSA_george_barnes_sc
+					if = {
+						limit = {
+							has_country_flag = USB_nakasone_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.134
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+					}
+					remove_ideas = USB_DIA_jeffrey_kruse_sc
+					add_ideas = USB_DIA_christine_bordine_sc
+					if = {
+						limit = {
+							has_country_flag = USB_kruse_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.135
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_james_comey_remove_flag
+					}
+					remove_ideas = USB_FBI_james_comey_sc
+					add_ideas = USB_FBI_paul_abbate_sc
+					if = {
+						limit = {
+							has_country_flag = USB_comey_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.136
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+					}
+					remove_ideas = USB_ATF_marvin_richardson_sc
+					add_ideas = USB_ATF_gary_restaino_sc
+					if = {
+						limit = {
+							has_country_flag = USB_richardson_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.137
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+					}
+					remove_ideas = USB_CDC_anthony_fauci_sc
+					add_ideas = USB_CDC_rochelle_walensky_sc
+					if = {
+						limit = {
+							has_country_flag = USB_fauci_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.138
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+					}
+					remove_ideas = USB_FEMA_deanne_criswell_sc
+					add_ideas = USB_FEMA_erik_hooks_sc
+					if = {
+						limit = {
+							has_country_flag = USB_criswell_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.139
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+					}
+					remove_ideas = USB_Pfizer_albert_bourla_sc
+					add_ideas = USB_Pfizer_sally_susman_sc
+					if = {
+						limit = {
+							has_country_flag = USB_bourla_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.141
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+					}
+					remove_ideas = USB_ICE_patrick_lechleitner_sc
+					add_ideas = USB_ICE_staci_barrera_sc
+					if = {
+						limit = {
+							has_country_flag = USB_lechleitner_judas_flag
+						}
+						country_event = {
+							id = nss.26
+							days = 5
+						}
+						country_event = {
+							id = nss.140
+							days = 10
+						}
+					}
+					else = {
+						country_event = {
+							id = nss.25
+							days = 5
+						}
+					}
+				}
+				clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+				clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+				clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+				clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+				clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+				clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+				clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+				clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+			}
+			USB_fire_window_no_button_click = {
+				clr_country_flag = sc_USB_NSA_paul_nakasone_remove_flag
+				clr_country_flag = sc_USB_NSA_jeffrey_kruse_remove_flag
+				clr_country_flag = sc_USB_NSA_james_comey_remove_flag
+				clr_country_flag = sc_USB_NSA_marvin_richardson_remove_flag
+				clr_country_flag = sc_USB_NSA_anthony_fauci_remove_flag
+				clr_country_flag = sc_USB_NSA_deanne_criswell_remove_flag
+				clr_country_flag = sc_USB_NSA_albert_bourla_remove_flag
+				clr_country_flag = sc_USB_NSA_patrick_lechleitner_remove_flag
+			}
+		}
+	}
+	TFR_USB_judas_gambit_gui = {
+		context_type = decision_category
+		window_name = "TFR_USB_judas_gambit_container"
+		triggers = {
+			USB_evidence1_visible = {
+				has_country_flag = USB_evidence1_flag
+			}
+			USB_evidence2_visible = {
+				has_country_flag = USB_evidence2_flag
+			}
+			USB_evidence3_visible = {
+				has_country_flag = USB_evidence3_flag
+			}
+			USB_evidence4_visible = {
+				has_country_flag = USB_evidence4_flag
+			}
+			USB_evidence5_visible = {
+				has_country_flag = USB_evidence5_flag
+			}
+			USB_evidence6_visible = {
+				has_country_flag = USB_evidence6_flag
+			}
+		}
+	}
+	TFR_USB_map_gui = {
+		context_type = decision_category
+		window_name = "TFR_USB_map_container"
+		triggers = {
+			USB_NORTHCOM_button_click_enabled = {
+				has_completed_focus = USB_we_wont_fail_again
+			}
+			USB_SOUTHCOM_button_click_enabled = {
+				has_completed_focus = USB_lznostalgia
+			}
+			USB_AFRICOM_button_click_enabled = {
+				has_completed_focus = USB_aqtomato
+			}
+			USB_EUROCOM_button_click_enabled = {
+				has_completed_focus = USB_cxhomecoming
+			}
+			USB_CENTCOM_button_click_enabled = {
+				has_completed_focus = USB_kktemple
+			}
+			USB_INDOPACIFICCOM_button_click_enabled = {
+				has_completed_focus = USB_mqwallbreaker
+			}
+		}
+		effects = {
+			USB_NORTHCOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 0
+				}
+			}
+			USB_SOUTHCOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 1
+				}
+			}
+			USB_AFRICOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 2
+				}
+			}
+			USB_CENTCOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 3
+				}
+			}
+			USB_EUROCOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 4
+				}
+			}
+			USB_INDOPACIFICCOM_button_click = {
+				set_variable = {
+					var = USB_map_var
+					value = 5
+				}
+			}
+		}
+	}
+	TFR_nabataean_tablet = {
+		window_name = "TFR_nabataean_tablet"
+		context_type = player_context
+
+		effects = {
+		}
+
+		triggers = {
+	    	TFR_nabataean_tablet_close_visible = {
+				has_country_flag = USB_nabataean_tablet_button_flag
+			}
+			TFR_nabataean_tablet_close_buttontext_visible = {
+				has_country_flag = USB_nabataean_tablet_button_flag
+			}
+	    }
+
+		visible = {
+			is_ai = no
+			has_country_flag = USB_nabataean_tablet_flag
+		}
+
+		effects = {
+			TFR_nabataean_tablet_close_click = {
+				clr_country_flag = USB_nabataean_tablet_button_flag
+				USB = {
+					country_event = nss.101
+				}
+			}
+		}
+	}
+	TFR_codex = {
+		window_name = "TFR_codex"
+		context_type = player_context
+
+		effects = {
+		}
+
+		triggers = {
+	    	TFR_codex_close_visible = {
+				has_country_flag = USB_codex_button_flag
+			}
+			TFR_codex_close_buttontext_visible = {
+				has_country_flag = USB_codex_button_flag
+			}
+	    }
+
+		visible = {
+			is_ai = no
+			has_country_flag = USB_codex_flag
+		}
+
+		effects = {
+			TFR_codex_close_click = {
+				clr_country_flag = USB_codex_button_flag
+				USB = {
+					country_event = nss.98
+				}
+			}
+		}
+	}
+	TFR_khipu = {
+		window_name = "TFR_khipu"
+		context_type = player_context
+
+		effects = {
+		}
+
+		triggers = {
+	    	TFR_khipu_close_visible = {
+				has_country_flag = USB_khipu_button_flag
+			}
+			TFR_khipu_close_buttontext_visible = {
+				has_country_flag = USB_khipu_button_flag
+			}
+	    }
+
+		visible = {
+			is_ai = no
+			has_country_flag = USB_khipu_flag
+		}
+
+		effects = {
+			TFR_khipu_close_click = {
+				clr_country_flag = USB_khipu_button_flag
+				USB = {
+					country_event = nss.99
+				}
+			}
+		}
+	}
+	TFR_idk = {
+		window_name = "TFR_idk"
+		context_type = player_context
+
+		effects = {
+		}
+
+		triggers = {
+	    	TFR_idk_close_visible = {
+				has_country_flag = USB_idk_button_flag
+			}
+			TFR_idk_close_buttontext_visible = {
+				has_country_flag = USB_idk_button_flag
+			}
+	    }
+
+		visible = {
+			is_ai = no
+			has_country_flag = USB_idk_flag
+		}
+
+		effects = {
+			TFR_idk_close_click = {
+				clr_country_flag = USB_idk_button_flag
+				USB = {
+					country_event = nss.100
+				}
+			}
+		}
+	}
+	
+	TFR_heian = {
+		window_name = "TFR_heian"
+		context_type = player_context
+
+		effects = {
+		}
+
+		triggers = {
+	    	TFR_heian_close_visible = {
+				has_country_flag = USB_heian_button_flag
+			}
+			TFR_heian_close_buttontext_visible = {
+				has_country_flag = USB_heian_button_flag
+			}
+	    }
+
+		visible = {
+			is_ai = no
+			has_country_flag = USB_heian_flag
+		}
+
+		effects = {
+			TFR_heian_close_click = {
+				clr_country_flag = USB_heian_button_flag
+				USB = {
+					country_event = nss.144
+				}
+			}
+		}
+	}
+}
+
+scripted_gui = {
+	USB_elections_deccat_gui = {
+		window_name = "USB_elections_deccat_gui"
+		context_type = decision_category
+		visible = {
+		   always = yes
+		   original_tag = USA
+		   original_tag = USB
+		}
+		triggers = {
+			top_folder_button_click_enabled = {
+				set_temp_variable = { folder_frame = 1 }
+				set_temp_variable = { flag_y = 16 }
+			}
+			electoral_advantage_bar_visible = {
+				tag = USA
+			}
+			electoral_advantage_text_visible = {
+				tag = USB
+			}
+		}
+		properties = {
+			top_folder_button = { frame = folder_frame }
+			flag_frame = { frame = folder_frame }
+			electoral_advantage_bar = { frame = USB:USB_electoral_advantage }
+		}
+	}
+	
+	dynamic_lists = {
+			state_list_grid = {
+				array = USB.selected_region_state_list
+				change_scope = no
+				entry_container = state_list_grid_entry
+				index = state_idx
+				value = state_val
+			}
+			projections_d = {
+				array = projection_offsets_d
+				change_scope = no
+				entry_container = projections_d_segment
+				index = segment_idx
+			}
+			projections_r = {
+				array = projection_offsets_r
+				change_scope = no
+				entry_container = projections_r_segment
+				index = segment_idx
+			}
+			projections_p = {
+				array = projection_offsets_p
+				change_scope = no
+				entry_container = projections_p_segment
+				index = segment_idx
+			}
+			projections_i = {
+				array = projection_offsets_i
+				change_scope = no
+				entry_container = projections_i_segment
+				index = segment_idx
+			}
+		}
+		
+ 		properties = {
+			segment_d = {
+				y = projection_offsets_d^segment_idx
+				frame = projection_slopes_d^segment_idx
+			}
+			segment_r = {
+				y = projection_offsets_r^segment_idx
+				frame = projection_slopes_r^segment_idx
+			}
+			segment_p = {
+				y = projection_offsets_p^segment_idx
+				frame = projection_slopes_p^segment_idx
+			}
+			segment_i = {
+				y = projection_offsets_i^segment_idx
+				frame = projection_slopes_i^segment_idx
+			}
+			
+			electoral_bar_d = {
+				frame = electoral_var_race_d
+			}
+			electoral_bar_r = {
+				frame = electoral_var_race_r
+			}
+			electoral_bar_p = {
+				frame = electoral_var_race_p
+			}
+			electoral_bar_i = {
+				frame = electoral_var_race_i
+			}
+			
+ 			state_1 = { frame = usb_election_state_major^1 }
+ 			state_2 = { frame = usb_election_state_major^2 }
+ 			state_3 = { frame = usb_election_state_major^3 }
+ 			state_4 = { frame = usb_election_state_major^4 }
+ 			state_5 = { frame = usb_election_state_major^5 }
+ 			state_6 = { frame = usb_election_state_major^6 }
+ 			state_7 = { frame = usb_election_state_major^7 }
+ 			state_8 = { frame = usb_election_state_major^8 }
+ 			state_9 = { frame = usb_election_state_major^9 }
+ 			state_10 = { frame = usb_election_state_major^10 }
+ 			state_11 = { frame = usb_election_state_major^11 }
+ 			state_12 = { frame = usb_election_state_major^12 }
+ 			state_13 = { frame = usb_election_state_major^13 }
+ 			state_14 = { frame = usb_election_state_major^14 }
+ 			state_15 = { frame = usb_election_state_major^15 }
+ 			state_16 = { frame = usb_election_state_major^16 }
+ 			state_17 = { frame = usb_election_state_major^17 }
+ 			state_18 = { frame = usb_election_state_major^18 }
+ 			state_19 = { frame = usb_election_state_major^19 }
+ 			state_20 = { frame = usb_election_state_major^20 }
+ 			state_21 = { frame = usb_election_state_major^21 }
+ 			state_22 = { frame = usb_election_state_major^22 }
+ 			state_23 = { frame = usb_election_state_major^23 }
+ 			state_24 = { frame = usb_election_state_major^24 }
+ 			state_25 = { frame = usb_election_state_major^25 }
+ 			state_26 = { frame = usb_election_state_major^26 }
+ 			state_27 = { frame = usb_election_state_major^27 }
+ 			state_28 = { frame = usb_election_state_major^28 }
+ 			state_29 = { frame = usb_election_state_major^29 }
+ 			state_30 = { frame = usb_election_state_major^30 }
+ 			state_31 = { frame = usb_election_state_major^31 }
+ 			state_32 = { frame = usb_election_state_major^32 }
+ 			state_33 = { frame = usb_election_state_major^33 }
+ 			state_34 = { frame = usb_election_state_major^34 }
+ 			state_35 = { frame = usb_election_state_major^35 }
+ 			state_36 = { frame = usb_election_state_major^36 }
+ 			state_37 = { frame = usb_election_state_major^37 }
+ 			state_38 = { frame = usb_election_state_major^38 }
+ 			state_39 = { frame = usb_election_state_major^39 }
+ 			state_40 = { frame = usb_election_state_major^40 }
+ 			state_41 = { frame = usb_election_state_major^41 }
+ 			state_42 = { frame = usb_election_state_major^42 }
+ 			state_43 = { frame = usb_election_state_major^43 }
+ 			state_44 = { frame = usb_election_state_major^44 }
+ 			state_45 = { frame = usb_election_state_major^45 }
+ 			state_46 = { frame = usb_election_state_major^46 }
+ 			state_47 = { frame = usb_election_state_major^47 }
+ 			state_48 = { frame = usb_election_state_major^48 }
+ 			state_49 = { frame = usb_election_state_major^49 }
+ 			state_50 = { frame = usb_election_state_major^50 }
+			state_51 = { frame = usb_election_state_major^51 }
+			state_52 = { frame = usb_election_state_major^52 }
+			state_53 = { frame = usb_election_state_major^53 }
+			state_54 = { frame = usb_election_state_major^54 }
+			state_55 = { frame = usb_election_state_major^55 }
+			state_56 = { frame = usb_election_state_major^56 }
+			state_57 = { frame = usb_election_state_major^57 }
+			
+ 			state_1_winner = { frame = usb_election_state_major^1 }
+ 			state_2_winner = { frame = usb_election_state_major^2 }
+ 			state_3_winner = { frame = usb_election_state_major^3 }
+ 			state_4_winner = { frame = usb_election_state_major^4 }
+ 			state_5_winner = { frame = usb_election_state_major^5 }
+ 			state_6_winner = { frame = usb_election_state_major^6 }
+ 			state_7_winner = { frame = usb_election_state_major^7 }
+ 			state_8_winner = { frame = usb_election_state_major^8 }
+ 			state_9_winner = { frame = usb_election_state_major^9 }
+ 			state_10_winner = { frame = usb_election_state_major^10 }
+ 			state_11_winner = { frame = usb_election_state_major^11 }
+ 			state_12_winner = { frame = usb_election_state_major^12 }
+ 			state_13_winner = { frame = usb_election_state_major^13 }
+ 			state_14_winner = { frame = usb_election_state_major^14 }
+ 			state_15_winner = { frame = usb_election_state_major^15 }
+ 			state_16_winner = { frame = usb_election_state_major^16 }
+ 			state_17_winner = { frame = usb_election_state_major^17 }
+ 			state_18_winner = { frame = usb_election_state_major^18 }
+ 			state_19_winner = { frame = usb_election_state_major^19 }
+ 			state_20_winner = { frame = usb_election_state_major^20 }
+ 			state_21_winner = { frame = usb_election_state_major^21 }
+ 			state_22_winner = { frame = usb_election_state_major^22 }
+ 			state_23_winner = { frame = usb_election_state_major^23 }
+ 			state_24_winner = { frame = usb_election_state_major^24 }
+ 			state_25_winner = { frame = usb_election_state_major^25 }
+ 			state_26_winner = { frame = usb_election_state_major^26 }
+ 			state_27_winner = { frame = usb_election_state_major^27 }
+ 			state_28_winner = { frame = usb_election_state_major^28 }
+ 			state_29_winner = { frame = usb_election_state_major^29 }
+ 			state_30_winner = { frame = usb_election_state_major^30 }
+ 			state_31_winner = { frame = usb_election_state_major^31 }
+ 			state_32_winner = { frame = usb_election_state_major^32 }
+ 			state_33_winner = { frame = usb_election_state_major^33 }
+ 			state_34_winner = { frame = usb_election_state_major^34 }
+ 			state_35_winner = { frame = usb_election_state_major^35 }
+ 			state_36_winner = { frame = usb_election_state_major^36 }
+ 			state_37_winner = { frame = usb_election_state_major^37 }
+ 			state_38_winner = { frame = usb_election_state_major^38 }
+ 			state_39_winner = { frame = usb_election_state_major^39 }
+ 			state_40_winner = { frame = usb_election_state_major^40 }
+ 			state_41_winner = { frame = usb_election_state_major^41 }
+ 			state_42_winner = { frame = usb_election_state_major^42 }
+ 			state_43_winner = { frame = usb_election_state_major^43 }
+ 			state_44_winner = { frame = usb_election_state_major^44 }
+ 			state_45_winner = { frame = usb_election_state_major^45 }
+ 			state_46_winner = { frame = usb_election_state_major^46 }
+ 			state_47_winner = { frame = usb_election_state_major^47 }
+ 			state_48_winner = { frame = usb_election_state_major^48 }
+ 			state_49_winner = { frame = usb_election_state_major^49 }
+ 			state_50_winner = { frame = usb_election_state_major^50 }
+			state_51_winner = { frame = usb_election_state_major^51 }
+			state_52_winner = { frame = usb_election_state_major^52 }
+			state_53_winner = { frame = usb_election_state_major^53 }
+			state_54_winner = { frame = usb_election_state_major^54 }
+			state_55_winner = { frame = usb_election_state_major^55 }
+			state_56_winner = { frame = usb_election_state_major^56 }
+			state_57_winner = { frame = usb_election_state_major^57 }
+		}
+		
+		effects = {
+			clear_click = { USB_clear_election_projection = yes }
+			add_click = { USB_election_project_new_point_all = yes }
+			
+			region_1_click = { USB_election_select_region_west_coast = yes }
+			region_2_click = { USB_election_select_region_southwest = yes }
+			region_3_click = { USB_election_select_region_mountain = yes }
+			region_4_click = { USB_election_select_region_west_north_central = yes }
+			region_5_click = { USB_election_select_region_upper_south = yes }
+			region_6_click = { USB_election_select_region_deep_south = yes }
+			region_7_click = { USB_election_select_region_great_lakes = yes }
+			region_8_click = { USB_election_select_region_new_england = yes }
+			region_9_click = { USB_election_select_region_mid_atlantic = yes }
+		}
+		
+		triggers = {
+			clear_visible = { is_debug = yes }
+			add_visible = { is_debug = yes }
+			
+			region_1_selected_visible = { check_variable = { usa_selected_region = token:USB_region_west_coast } }
+			region_2_selected_visible = { check_variable = { usa_selected_region = token:USB_region_southwest } }
+			region_3_selected_visible = { check_variable = { usa_selected_region = token:USB_region_mountain } }
+			region_4_selected_visible = { check_variable = { usa_selected_region = token:USB_region_west_north_central } }
+			region_5_selected_visible = { check_variable = { usa_selected_region = token:USB_region_upper_south } }
+			region_6_selected_visible = { check_variable = { usa_selected_region = token:USB_region_deep_south } }
+			region_7_selected_visible = { check_variable = { usa_selected_region = token:USB_region_great_lakes } }
+			region_8_selected_visible = { check_variable = { usa_selected_region = token:USB_region_new_england } }
+			region_9_selected_visible = { check_variable = { usa_selected_region = token:USB_region_mid_atlantic } }
+			
+			states_bg_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_1_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_2_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_3_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_4_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_5_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_6_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_7_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_8_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_9_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_10_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_11_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_12_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_13_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_14_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_15_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_16_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_17_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_18_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_19_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_20_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_21_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_22_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_23_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_24_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_25_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_26_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_27_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_28_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_29_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_30_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_31_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_32_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_33_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_34_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_35_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_36_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_37_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_38_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_39_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_40_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_41_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_42_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_43_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_44_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_45_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_46_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_47_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_48_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_49_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_50_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_51_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_52_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_53_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_54_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_55_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_56_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			#state_57_hidden_visible = { NOT = { has_country_flag = usb_election_state_poll_flag } }
+			
+			state_1_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_2_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_3_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_4_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_5_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_6_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_7_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_8_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_9_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_10_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_11_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_12_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_13_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_14_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_15_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_16_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_17_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_18_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_19_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_20_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_21_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_22_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_23_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_24_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_25_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_26_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_27_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_28_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_29_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_30_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_31_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_32_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_33_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_34_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_35_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_36_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_37_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_38_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_39_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_40_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_41_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_42_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_43_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_44_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_45_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_46_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_47_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_48_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_49_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_50_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_51_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_52_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_53_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_54_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_55_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_56_visible = { has_country_flag = usb_election_state_poll_flag }
+			state_57_visible = { has_country_flag = usb_election_state_poll_flag }
+			
+			states_bg_countdown_visible = { has_country_flag = usb_election_map_anim_flag }
+			
+			state_1_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^1 = 0 } }
+			state_2_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^2 = 0 } }
+			state_3_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^3 = 0 } }
+			state_4_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^4 = 0 } }
+			state_5_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^5 = 0 } }
+			state_6_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^6 = 0 } }
+			state_7_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^7 = 0 } }
+			state_8_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^8 = 0 } }
+			state_9_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^9 = 0 } }
+			state_10_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^10 = 0 } }
+			state_11_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^11 = 0 } }
+			state_12_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^12 = 0 } }
+			state_13_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^13 = 0 } }
+			state_14_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^14 = 0 } }
+			state_15_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^15 = 0 } }
+			state_16_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^16 = 0 } }
+			state_17_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^17 = 0 } }
+			state_18_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^18 = 0 } }
+			state_19_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^19 = 0 } }
+			state_20_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^20 = 0 } }
+			state_21_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^21 = 0 } }
+			state_22_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^22 = 0 } }
+			state_23_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^23 = 0 } }
+			state_24_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^24 = 0 } }
+			state_25_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^25 = 0 } }
+			state_26_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^26 = 0 } }
+			state_27_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^27 = 0 } }
+			state_28_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^28 = 0 } }
+			state_29_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^29 = 0 } }
+			state_30_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^30 = 0 } }
+			state_31_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^31 = 0 } }
+			state_32_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^32 = 0 } }
+			state_33_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^33 = 0 } }
+			state_34_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^34 = 0 } }
+			state_35_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^35 = 0 } }
+			state_36_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^36 = 0 } }
+			state_37_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^37 = 0 } }
+			state_38_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^38 = 0 } }
+			state_39_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^39 = 0 } }
+			state_40_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^40 = 0 } }
+			state_41_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^41 = 0 } }
+			state_42_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^42 = 0 } }
+			state_43_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^43 = 0 } }
+			state_44_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^44 = 0 } }
+			state_45_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^45 = 0 } }
+			state_46_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^46 = 0 } }
+			state_47_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^47 = 0 } }
+			state_48_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^48 = 0 } }
+			state_49_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^49 = 0 } }
+			state_50_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^50 = 0 } }
+			state_51_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^51 = 0 } }
+			state_52_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^52 = 0 } }
+			state_53_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^53 = 0 } }
+			state_54_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^54 = 0 } }
+			state_55_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^55 = 0 } }
+			state_56_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^56 = 0 } }
+			state_57_anim_visible = { has_country_flag = usb_election_map_anim_flag check_variable = { usb_election_state_winner^57 = 0 } }
+			
+			state_1_winner_visible = { check_variable = { usb_election_state_winner^1 > 0 } }
+			state_2_winner_visible = { check_variable = { usb_election_state_winner^2 > 0 } }
+			state_3_winner_visible = { check_variable = { usb_election_state_winner^3 > 0 } }
+			state_4_winner_visible = { check_variable = { usb_election_state_winner^4 > 0 } }
+			state_5_winner_visible = { check_variable = { usb_election_state_winner^5 > 0 } }
+			state_6_winner_visible = { check_variable = { usb_election_state_winner^6 > 0 } }
+			state_7_winner_visible = { check_variable = { usb_election_state_winner^7 > 0 } }
+			state_8_winner_visible = { check_variable = { usb_election_state_winner^8 > 0 } }
+			state_9_winner_visible = { check_variable = { usb_election_state_winner^9 > 0 } }
+			state_10_winner_visible = { check_variable = { usb_election_state_winner^10 > 0 } }
+			state_11_winner_visible = { check_variable = { usb_election_state_winner^11 > 0 } }
+			state_12_winner_visible = { check_variable = { usb_election_state_winner^12 > 0 } }
+			state_13_winner_visible = { check_variable = { usb_election_state_winner^13 > 0 } }
+			state_14_winner_visible = { check_variable = { usb_election_state_winner^14 > 0 } }
+			state_15_winner_visible = { check_variable = { usb_election_state_winner^15 > 0 } }
+			state_16_winner_visible = { check_variable = { usb_election_state_winner^16 > 0 } }
+			state_17_winner_visible = { check_variable = { usb_election_state_winner^17 > 0 } }
+			state_18_winner_visible = { check_variable = { usb_election_state_winner^18 > 0 } }
+			state_19_winner_visible = { check_variable = { usb_election_state_winner^19 > 0 } }
+			state_20_winner_visible = { check_variable = { usb_election_state_winner^20 > 0 } }
+			state_21_winner_visible = { check_variable = { usb_election_state_winner^21 > 0 } }
+			state_22_winner_visible = { check_variable = { usb_election_state_winner^22 > 0 } }
+			state_23_winner_visible = { check_variable = { usb_election_state_winner^23 > 0 } }
+			state_24_winner_visible = { check_variable = { usb_election_state_winner^24 > 0 } }
+			state_25_winner_visible = { check_variable = { usb_election_state_winner^25 > 0 } }
+			state_26_winner_visible = { check_variable = { usb_election_state_winner^26 > 0 } }
+			state_27_winner_visible = { check_variable = { usb_election_state_winner^27 > 0 } }
+			state_28_winner_visible = { check_variable = { usb_election_state_winner^28 > 0 } }
+			state_29_winner_visible = { check_variable = { usb_election_state_winner^29 > 0 } }
+			state_30_winner_visible = { check_variable = { usb_election_state_winner^30 > 0 } }
+			state_31_winner_visible = { check_variable = { usb_election_state_winner^31 > 0 } }
+			state_32_winner_visible = { check_variable = { usb_election_state_winner^32 > 0 } }
+			state_33_winner_visible = { check_variable = { usb_election_state_winner^33 > 0 } }
+			state_34_winner_visible = { check_variable = { usb_election_state_winner^34 > 0 } }
+			state_35_winner_visible = { check_variable = { usb_election_state_winner^35 > 0 } }
+			state_36_winner_visible = { check_variable = { usb_election_state_winner^36 > 0 } }
+			state_37_winner_visible = { check_variable = { usb_election_state_winner^37 > 0 } }
+			state_38_winner_visible = { check_variable = { usb_election_state_winner^38 > 0 } }
+			state_39_winner_visible = { check_variable = { usb_election_state_winner^39 > 0 } }
+			state_40_winner_visible = { check_variable = { usb_election_state_winner^40 > 0 } }
+			state_41_winner_visible = { check_variable = { usb_election_state_winner^41 > 0 } }
+			state_42_winner_visible = { check_variable = { usb_election_state_winner^42 > 0 } }
+			state_43_winner_visible = { check_variable = { usb_election_state_winner^43 > 0 } }
+			state_44_winner_visible = { check_variable = { usb_election_state_winner^44 > 0 } }
+			state_45_winner_visible = { check_variable = { usb_election_state_winner^45 > 0 } }
+			state_46_winner_visible = { check_variable = { usb_election_state_winner^46 > 0 } }
+			state_47_winner_visible = { check_variable = { usb_election_state_winner^47 > 0 } }
+			state_48_winner_visible = { check_variable = { usb_election_state_winner^48 > 0 } }
+			state_49_winner_visible = { check_variable = { usb_election_state_winner^49 > 0 } }
+			state_50_winner_visible = { check_variable = { usb_election_state_winner^50 > 0 } }
+			state_51_winner_visible = { check_variable = { usb_election_state_winner^51 > 0 } }
+			state_52_winner_visible = { check_variable = { usb_election_state_winner^52 > 0 } }
+			state_53_winner_visible = { check_variable = { usb_election_state_winner^53 > 0 } }
+			state_54_winner_visible = { check_variable = { usb_election_state_winner^54 > 0 } }
+			state_55_winner_visible = { check_variable = { usb_election_state_winner^55 > 0 } }
+			state_56_winner_visible = { check_variable = { usb_election_state_winner^56 > 0 } }
+			state_57_winner_visible = { check_variable = { usb_election_state_winner^57 > 0 } }
+			
+			states_bg_overlay2_visible = { has_country_flag = usb_election_state_poll_flag }
+			states_bg_overlay3_visible = { has_country_flag = usb_election_state_poll_flag }
+			states_bg_overlay4_visible = { has_country_flag = usb_election_map_anim_flag }
+			states_bg_overlay5_visible = { has_country_flag = usb_election_map_anim_flag }
+			
+			projection_no_data_visible = { check_variable = { projection_total_tally = 0 } }
+			#projection_stop_data_visible = { is_USB_election_countdown_not_very_close = no }
+		}
+
+	USB_election_help_gui = {
+		context_type = decision_category
+		window_name = "USB_election_help_gui"
+	}
+}

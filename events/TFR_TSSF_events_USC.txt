@@ -1,0 +1,417 @@
+add_namespace = TFRPR.usc
+add_namespace = rokossovsky.usc
+
+#Governors Support Trump
+country_event = {
+    id = TFRPR.usc.1
+	title = TFRPR.usc.1.t
+	desc = TFRPR.usc.1.d
+	picture = GFX_TFRPR_USC_governors_meeting
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+	    tag = USC
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.1 immediate"
+	   }
+	}
+	option = {
+		name = TFRPR.usc.1.a
+		set_country_flag = USC_rallying_with_governors
+		custom_effect_tooltip = USC_event_1_tt
+		add_popularity = { 
+			ideology = conservative
+			popularity = 0.03
+		}
+		add_popularity = {
+		    ideology = authoritarian_democratic
+			popularity = 0.04
+		}
+		hidden_effect = {
+			country_event = { id = TFRPR.usc.2 days = 4 }
+		}
+	}
+}
+
+#Minnesota Burns Down
+country_event = {
+    id = TFRPR.usc.2
+	title = TFRPR.usc.2.t
+	desc = TFRPR.usc.2.d
+	picture = GFX_Minneapolis_burning_riots
+	fire_only_once = yes
+	trigger = {
+	   tag = USC
+	   has_country_flag = USC_rallying_with_governors
+	}
+	immediate = {
+	}
+	option = {
+	    name = TFRPR.usc.2.a
+		custom_effect_tooltip = USC_event_2_tt
+		add_political_power = 4
+		add_war_support = 0.04
+		add_stability = -0.02
+		hidden_effect = {
+		    country_event = { id = TFRPR.usc.3 days = 8 }
+		}
+	}
+}
+
+#Standoff near Chicago
+country_event = {
+    id = TFRPR.usc.3
+	title = TFRPR.usc.3
+	desc = TFRPR.usc.3.d
+	picture = GFX_militias_in_chicago
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	   tag = USC
+	   USC = {
+	       owns_state = 395
+	   }
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.3 immediate"
+	   }
+	}
+	option = {
+		name = TFRPR.usc.3.a
+		custom_effect_tooltip = USC_event_3_tt
+		hidden_effect = {
+			country_event = { id = TFRPR.usc.4 days = 12 }
+		}
+	}
+}
+
+#Troop Buildup Near Indiana and Kentucky Border
+country_event = {
+    id = TFRPR.usc.4
+	title = TFRPR.usc.4.t
+	desc = TFRPR.usc.4.d
+	picture = GFX_pro_trump_military_buildup
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	   tag = USC
+	   USC = {
+	       owns_state = 395
+	   }
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.4 immediate"
+	   }
+	}
+	option = {
+		name = TFRPR.usc.4
+		custom_effect_tooltip = USC_event_4_tt
+	}
+}
+
+#OPERATION OZARK REPORT
+country_event = {
+    id = TFRPR.usc.5
+	title = TFRPR.usc.5.t
+	desc = TFRPR.usc.5.d
+	picture = GFX_humvees_in_st_louis
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	   tag = USC
+	   USB = {
+	       owns_state = 395
+		   owns_state = 1119
+		   owns_state = 1120
+	   }
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.5 immediate"
+	   }
+	   set_country_flag = USB_in_illinois_flag
+	}
+	option = {
+		name = TFRPR.usc.5
+		custom_effect_tooltip = USC_event_5_tt
+		hidden_effect = {
+		    1071 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 13818
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 13817
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 13816
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 13815
+					instant_build = yes
+				}
+			}
+			1124 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 4449
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 4540
+					instant_build = yes
+				}
+			}
+			1125 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 1523
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+    #Denver overrun by protests
+	id = TFRPR.usc.6
+	title = TFRPR.usc.6.t
+	desc = TFRPR.usc.6.d
+	picture = GFX_denver_riots_police
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = USC
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.6 immediate"
+	   }
+	}
+	option = {
+		name = TFRPR.usc.6.a
+	}
+}
+
+country_event = {
+    #Union woke starts to chase down good Americans
+	id = TFRPR.usc.7
+	title = TFRPR.usc.7.t
+	desc = TFRPR.usc.7.d
+	picture = GFX_USC_battlefield_chicago
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = USC
+		has_war_with = USB
+	}
+	immediate = {
+	   hidden_effect = {
+		   log = "[GetDateText]: [Root.GetName]: event TFRPR.usc.7 immediate"
+	   }
+	}
+	option = {
+		name = TFRPR.usc.7.a
+		custom_effect_tooltip = USC_event_5_tt
+		hidden_effect = {
+			country_event = { id = TFRPR.usc.8 days = 4 }
+		}
+	}
+}
+
+#Push Aviation Enthusiasts into the Frontline
+country_event = {
+	id = TFRPR.usc.8
+	title = TFRPR.usc.8.t
+	desc = TFRPR.usc.8.d
+	picture = GFX_USC_oshkosh_airshow
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = USC
+		owns_state = 394
+		owns_state = 1252
+	}
+	immediate = {
+	}
+	option = { #Fight Them By The Air
+		name = TFRPR.usc.8.a
+		set_country_flag = USC_put_air_enthusiast_into_pilots_flag
+		add_stability = 0.004
+		hidden_effect = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 95
+				producer = USC
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment_1
+				amount = 50
+				producer = USC
+			}
+		}
+	}
+}
+
+#Question of Escaping West Coast Forces
+country_event = {
+	id = TFRPR.usc.9
+	title = TFRPR.usc.9.t
+	desc = TFRPR.usc.9.d
+	picture = GFX_USC_west_coast_military_refugees
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = USC
+	}
+	immediate = {
+	}
+	option = { #Integrate Them
+		name = TFRPR.usc.9.a
+		set_country_flag = USC_integrate_fleeing_west_coast_forces_flag
+		add_stability = 0.004
+		382 = {
+			create_unit = {
+				division = "name = \"40th Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.4 start_equipment_factor = 1.0" 
+				owner = USC	
+			}
+		}
+		984 = {
+			create_unit = {
+				division = "name = \"79th Infantry Brigade Combat Team\" division_template = \"Infantry Brigade Combat Team\" start_experience_factor = 0.3" 
+				owner = USC	
+			}
+		}
+		1142 = {
+			create_unit = {
+				division = "name = \"41st Infantry Brigade Combat Team\" division_template = \"Infantry Brigade Combat Team\" start_experience_factor = 0.2" 
+				owner = USC	
+			}
+		}
+		1142 = {
+			create_unit = {
+				division = "name = \"81st Stryker Brigade Combat Team\" division_template = \"Stryker Brigades\" start_experience_factor = 0.2" 
+				owner = USC	
+			}
+		}
+	}
+	option = { #Don't Trust the Coastal Elites
+		name = TFRPR.usc.9.b
+		set_country_flag = USC_no_integration_of_west_coast_forces_flag
+	}
+}
+
+country_event = {
+	#Hillbilly on Joe Rogan
+	id = TFRPR.usc.10
+	title = TFRPR.usc.10.t
+	desc = TFRPR.usc.10.d
+	picture = GFX_USC_hillbilly_colonel_joe_rogan
+	is_triggered_only = yes
+	fire_only_once = yes
+	  trigger = {
+		tag = USC
+		   USB = {
+		   exists = no
+		   } 
+	   }
+	immediate = {
+	}
+	option = {
+		name = TFRPR.usc.10.a
+		custom_effect_tooltip = USC_event_news_articles_1_tt
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.008
+		}
+		add_political_power = 4
+		add_war_support = 0.06
+	}
+}
+
+#March on Washington, if ACG captures DC before the National Front make their move
+country_event = {
+    id = usc.100
+	title = usc.100.t
+	desc = usc.100.d
+	picture = picture = GFX_USC_trumpists_2
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = USC
+		USB = {
+		   exists = no
+		}
+	}
+	option = { #The crowds are loving it
+		name = usc.100.a
+		add_war_support = 0.02
+		add_stability = 0.02
+		hidden_effect = {
+			country_event = { id = usc.101 days = 28 }
+		}
+	}
+}
+
+#Reconstruction work on Mar-A-Lago begins, if ATW trash his mansion
+country_event = {
+    id = usc.148
+	title = usc.148.t
+	desc = usc.148.d
+	picture = GFX_USC_mar_a_lago_rebuilding
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = USC
+	}
+	immediate = {
+	}
+	option = { #Just the Beginning of Our Fight
+		name = usc.94.a
+		set_country_flag = USC_put_air_enthusiast_into_pilots_flag
+		add_stability = 0.004
+		382 = {
+			create_unit = {
+				division = "name = \"40th Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.4 start_equipment_factor = 1.0" 
+				owner = USC	
+			}
+		}
+		984 = {
+			create_unit = {
+				division = "name = \"79th Infantry Brigade Combat Team\" division_template = \"Infantry Brigade Combat Team\" start_experience_factor = 0.3" 
+				owner = USC	
+			}
+		}
+		1142 = {
+			create_unit = {
+				division = "name = \"41st Infantry Brigade Combat Team\" division_template = \"Infantry Brigade Combat Team\" start_experience_factor = 0.2" 
+				owner = USC	
+			}
+		}
+		1142 = {
+			create_unit = {
+				division = "name = \"81st Stryker Brigade Combat Team\" division_template = \"Stryker Brigades\" start_experience_factor = 0.2" 
+				owner = USC	
+			}
+		}
+	}
+}

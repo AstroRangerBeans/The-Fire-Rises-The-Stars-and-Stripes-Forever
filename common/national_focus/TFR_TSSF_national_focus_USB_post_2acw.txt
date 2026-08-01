@@ -1,0 +1,399 @@
+######################################################
+# Union of America Post-2ACW Focus Tree
+# Made by AstroRangerBeans
+######################################################
+focus_tree = {
+	id = USB_post_2acw_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = USB
+		}
+	}
+	focus = {
+	      id = USB_2ACW_Victory
+	      icon = GFX_focus_USB_2ACW_Victory
+	      x = 0
+	      y = 0
+	      cost = 5    
+	      ai_will_do = {
+		    factor = 10
+			base = 400
+	      }
+		  available = {
+			original_tag = USB
+			has_country_flag = USB_has_won_2acw_flag
+		  }
+	      allow_branch = {
+		    has_country_flag = USB_has_won_2acw_flag
+	      }	    
+	      completion_reward = {
+			 log = "[GetDateText]: [Root.GetName]: focus USB_2ACW_Victory completion_reward"
+			 add_political_power = 30
+		  }
+		  set_country_flag = USA_shattered_economy
+	}
+		
+	focus = {
+		    id = USB_strengthen_stability
+		    icon = GFX_focus_USB_strengthen_stability
+		    relative_position_id = USB_2ACW_Victory
+		    x = -2
+		    y = 1
+		    cost = 4	
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    prerequisite = { focus = USB_2ACW_Victory }			
+		    completion_reward = {
+			    add_political_power = 200
+				unlock_decision_tooltip = USB_reorganize_bureaucracy
+				unlock_decision_tooltip = USB_refocus_economy
+				unlock_decision_tooltip = USB_recover_army
+				set_variable = { USB_bureaucracy_cost = 60 }
+				set_variable = { USB_economy_cost = 60 }
+				set_variable = { USB_army_cost = 60 }
+				every_owned_state = {
+					limit = {
+					has_state_flag = USA_core_state
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				remove_core = USA
+				}
+				add_stability = 0.09
+				USB_increase_security_patrols = yes
+				hidden_effect = {
+					country_event = { id = union_post2acw.22 days = 7 }
+				}
+		    }
+        }
+		
+	focus = {
+		    id = USB_assist_in_reconstruction
+		    icon = GFX_focus_USB_assist_in_reconstruction
+		    relative_position_id = USB_2ACW_Victory
+		    x = 0
+		    y = 1
+		    cost = 4
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    prerequisite = { focus = USB_2ACW_Victory }			
+		    completion_reward = {
+			    effect_tooltip = {
+				   add_idea = USB_shattered_economy
+		        }
+			    random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 4
+						include_locked = yes
+					}
+					add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = office_park
+							level = 1
+							instant_build = yes
+						}
+				}
+				add_extra_state_shared_building_slots = 4
+				    add_building_construction = {
+					  type = infrastructure
+					  level = 1
+					  instant_build = yes
+				    }
+			    }
+				random_owned_controlled_state = {
+				  increase_state_category = yes
+			    }
+			    random_owned_controlled_state = {
+				  increase_state_category = yes
+			    }
+			    random_owned_controlled_state = {
+				  increase_state_category = yes
+			    }
+				hidden_effect = {
+					country_event = { id = union_post2acw.3 days = 20 }
+				}
+			}
+    }
+		
+	focus = {
+		    id = USB_deal_with_militant_extremism
+		    icon = GFX_focus_USB_deal_with_militant_extremism
+		    relative_position_id = USB_2ACW_Victory
+		    x = 2
+		    y = 1
+		    cost = 3
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    prerequisite = { focus = USB_2ACW_Victory }			
+			completion_reward = {
+			    add_ideas = USB_jayhawkers_militia_idea
+				add_political_power = 55
+			    add_stability = 0.10
+			    hidden_effect = {
+				    country_event = {
+					  id = union_post2acw.3
+					  days = 35
+				    }
+			    }
+		    }
+    }
+		
+	focus = {
+		    id = USB_fixing_the_constitution
+		    icon = GFX_focus_USB_fixing_the_constitution
+		    relative_position_id = USB_strengthen_stability
+		    x = 1
+		    y = 1
+		    cost = 6
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    prerequisite = { focus = USB_strengthen_stability focus = USB_assist_in_reconstruction focus = USB_deal_with_militant_extremism }
+            mutually_exclusive = {
+			   focus = USB_rebuilding_the_new_constitution
+		    }			
+		    completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: focus USB_fixing_the_constitution completion_reward"
+			    unlock_decision_tooltip = USB_constitutionalize_roe_decision
+			    unlock_decision_tooltip = USB_twenty_ninth_amendment_decision
+			    unlock_decision_tooltip = USB_thirtieth_amendment_decision
+				unlock_decision_tooltip = USB_second_reconstruction_amendments_decision
+				effect_tooltip = {
+			       OR = {
+					   swap_ideas = {
+					      remove_idea = USB_second_great_society_dummy_idea
+					      add_idea = USB_fixing_the_constitution_idea
+				       }
+				   }
+				    OR = {
+					   swap_ideas = {
+					      remove_idea = USB_new_american_democracy_2_dummy_idea
+					      add_idea = USB_fixing_the_constitution_idea
+				       }
+				    }
+					OR = {
+					   swap_ideas = {
+					      remove_idea = USB_constitutionalism_dummy_idea
+					      add_idea = USB_fixing_the_constitution_idea
+				       }
+				    }
+				}
+			    hidden_effect = {
+			    if = {
+				   limit = {
+					   has_idea = USB_new_american_democracy_2_idea
+					   has_idea = USB_abolish_the_electoral_college
+				   }
+				   country_event = {
+					  id = union_post2acw.32
+				   }
+			     }
+			   }
+		    }
+    }
+		
+	focus = {
+		    id = USB_rebuilding_the_new_constitution
+		    icon = GFX_focus_USB_rebuilding_the_new_constitution
+		    relative_position_id = USB_assist_in_reconstruction
+		    x = 1
+		    y = 1
+		    cost = 6
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    prerequisite = { focus = USB_strengthen_stability focus = USB_assist_in_reconstruction focus = USB_deal_with_militant_extremism }
+            mutually_exclusive = {
+			   focus = USB_fixing_the_constitution
+		    }
+		    completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: focus USB_rebuilding_the_new_constitution completion_reward"
+			    effect_tooltip = {
+				   add_ideas = USB_new_constitutional_convention_idea
+			    }
+			   hidden_effect = {
+			    if = { #If liberals are in power
+				   limit = {
+					   has_government = social_liberal
+					   OR = {
+					      has_idea = USB_green_new_deal_progressive_idea
+					   }
+					   OR = {
+					      has_idea = USB_second_great_society_idea
+					   }
+				   }
+				      country_event = {
+					     id = union_post2acw.32
+				      }
+			       }
+				   if = { #If progressives/Sanders/AOC in power
+				      limit = {
+					      has_government = social_democrat
+					      has_idea = USB_new_american_democracy_2_idea
+					      OR = {
+					         has_idea = USB_green_new_deal_progressive_idea
+					      }
+					      OR = {
+					         has_idea = USB_second_great_society_idea
+					      }
+				      }
+				      country_event = {
+					     id = union_post2acw.32
+				      }
+			       }
+				   if = { #If conservatives are in power
+				   limit = {
+					   has_government = conservative
+					   has_idea = USB_constitutionalism_idea
+				   }
+				      country_event = {
+					     id = union_post2acw.32
+				      }
+			       }
+			    }
+		    }
+    }
+		
+	focus = {
+		    id = USB_weed_out_partisan_insurgents
+		    icon = GFX_focus_USB_weed_out_partisan_insurgents
+		    relative_position_id = USB_fixing_the_constitution
+		    x = -1
+		    y = 1
+		    cost = 3
+		    prerequisite = { 
+			    focus = USB_fixing_the_constitution
+				focus = USB_rebuilding_the_new_constitution
+			}	
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }			
+		    completion_reward = {
+				add_political_power = 75
+				unlock_decision_tooltip = USB_utilize_jayhawker_militia_decision
+				unlock_decision_tooltip = USB_tackle_underground_network_decision
+				unlock_decision_tooltip = USB_destroy_constitutionalist_remnants_decision
+			    unlock_decision_tooltip = USB_destroy_national_front_remnants_decision
+			    unlock_decision_tooltip = USB_destroy_apla_remnants_decision
+				unlock_decision_tooltip = USB_destroy_cascadian_remnants_decision
+			}
+    }
+		
+	focus = {
+		    id = USB_the_future_of_republican_party
+		    icon = GFX_focus_USB_the_future_of_republican_party
+		    relative_position_id = USB_fixing_the_constitution
+		    x = 1
+		    y = 1
+		    cost = 2
+		    prerequisite = { 
+			    focus = USB_fixing_the_constitution
+				focus = USB_rebuilding_the_new_constitution
+			}		
+			ai_will_do = {
+				base = 50
+			}
+		    available = {
+		    }
+		    completion_reward = {
+				custom_effect_tooltip = USB_fate_of_the_republican_party_tt
+				   country_event = {
+				     id = union_post2acw.1
+			       }
+			       add_popularity = {
+				       ideology = social_liberal
+				       popularity = 0.06
+			       }
+			       add_popularity = {
+				       ideology = social_democrat
+				       popularity = 0.05
+			        }
+			       add_popularity = {
+				      ideology = conservative
+				      popularity = 0.04
+			       }
+		    }
+    }
+		
+	focus = {
+		    id = USB_investments_in_civic_education
+		    icon = GFX_focus_USB_investments_in_civic_education
+		    relative_position_id = USB_rebuilding_the_new_constitution
+		    x = 1
+		    y = 1
+		    cost = 3
+		    prerequisite = { 
+			    focus = USB_fixing_the_constitution
+				focus = USB_rebuilding_the_new_constitution
+			}
+		    ai_will_do = {
+				base = 50
+		    }
+		    available = {
+		    }			
+		    completion_reward = {
+				add_ideas = USB_restructuring_education_idea
+			    unlock_decision_tooltip = USB_civic_education_decision
+				add_to_variable = {
+					var = USB_politics_business_value_factor_dynamic_var
+					value = 0.01
+				}
+				add_to_variable = {
+					var = USB_politics_society_development_monthly_dynamic_var
+					value = 0.02
+				}
+				add_to_variable = {
+					var = USB_politics_poverty_development_monthly_dynamic_var
+					value = 0.02
+				}
+		    }
+     }
+		
+	focus = {
+		    id = USB_more_perfect_union
+		    icon = GFX_focus_USB_more_perfect_union
+		    relative_position_id = USB_the_future_of_republican_party
+		    x = 0
+		    y = 1
+		    cost = 3
+		    ai_will_do = {
+				base = 50
+		    }
+		    available = {
+		    }
+		    prerequisite = { focus = USB_investments_in_civic_education }
+		    prerequisite = { focus = USB_future_of_republican_party }
+			prerequisite = { focus = USB_weed_out_partisan_insurgents }
+		    prerequisite = { focus = USB_fixing_the_constitution focus = USB_rebuilding_the_new_constitution }
+		    completion_reward = {
+				country_event = { id = union_elections_2028.1 days = 3 }
+		    }
+    }
+}
+		

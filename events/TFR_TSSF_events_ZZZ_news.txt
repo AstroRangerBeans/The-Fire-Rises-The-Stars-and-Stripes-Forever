@@ -1,0 +1,1326 @@
+add_namespace = tfrpr_news
+#Collapse of ACG, if UoA, PF/NSM, or APLA steamrolled them
+news_event = {
+	id = tfrpr_news.1
+	title = tfrpr_news.1.t
+	desc = tfrpr_news.1.desc
+	picture = GFX_denver_fire
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.1.a
+		trigger = {
+			NOT = {
+				tag = USB
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.1.b
+		trigger = {
+			tag = USB
+		}
+	}
+	option = {
+		name = tfrpr_news.1.c
+		trigger = {
+			tag = APA
+		}
+	}
+	option = {
+		name = tfrpr_news.1.d
+		trigger = {
+			tag = PTF
+		}
+	}
+}
+
+#Fall of National Front (PF, NSM, and AWD/LOS)
+news_event = {
+	id = tfrpr_news.2
+	title = tfrpr_news.2.t
+	desc = tfrpr_news.2.desc
+	picture = GFX_army_in_boston
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.2.a
+		trigger = {
+			NOT = {
+				tag = USB
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.2.b
+		trigger = {
+			tag = USB
+		}
+	}
+	option = {
+		name = tfrpr_news.2.c
+		trigger = {
+			tag = APA
+		}
+	}
+	option = {
+		name = tfrpr_news.2.d
+		trigger = {
+			tag = ACG
+		}
+	}
+}
+
+#APLA collapses
+news_event = {
+	id = tfrpr_news.3
+	title = tfrpr_news.3.t
+	desc = tfrpr_news.3.desc
+	picture = GFX_california_battle
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.3.a
+		trigger = {
+			NOT = {
+				tag = ACG
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.3.b
+		trigger = {
+			tag = ACG
+		}
+	}
+	option = {
+		name = tfrpr_news.3.c
+		trigger = {
+			tag = USB
+		}
+	}
+	option = {
+		name = tfrpr_news.3.d
+		trigger = {
+			tag = PTF
+		}
+	}
+}
+
+#UoA got smoked
+news_event = {
+	id = tfrpr_news.4
+	title = tfrpr_news.4.t
+	desc = tfrpr_news.4.desc
+	picture = GFX_white_house_fire
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.4.a
+		trigger = {
+			NOT = {
+				tag = ACG
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.4.b
+		trigger = {
+			tag = ACG
+		}
+	}
+	option = {
+		name = tfrpr_news.4.c
+		trigger = {
+			tag = PTF
+		}
+	}
+	option = {
+		name = tfrpr_news.4.d
+		trigger = {
+			tag = NSM
+		}
+	}
+	option = {
+	    name = tfrpr_news.4.e
+		trigger = {
+		    tag = APA
+		}
+	}
+}
+
+#De Villers revives French democracy
+news_event = {
+	id = tfrpr_news.5
+	title = tfrpr_news.5.t
+	desc = tfrpr_news.5.d
+	picture = GFX_french_jets
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.5.a
+	}
+}
+
+#Bardella as Augustus
+news_event = {
+	id = tfrpr_news.6
+	title = tfrpr_news.6.t
+	desc = tfrpr_news.6.d
+	picture = GFX_new_roman_empire
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.6.a
+	}
+}
+
+#Napoleon 2.0.
+news_event = {
+	id = tfrpr_news.7
+	title = tfrpr_news.7.t
+	desc = tfrpr_news.7.d
+	picture = GFX_napoleon_rebirth
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.7.a
+	}
+}
+
+#Benedetti inaugurated as dictator
+news_event = {
+	id = tfrpr_news.8
+	title = tfrpr_news.8.t
+	desc = tfrpr_news.8.d
+	picture = GFX_france_benedetti_dictator
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.8.a
+	}
+}
+
+#Funni/based Lafayette coups the government
+news_event = {
+	id = tfrpr_news.9
+	title = tfrpr_news.9.t
+	desc = tfrpr_news.9.d
+	picture = GFX_lafayette_coup
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.9.a
+	}
+}
+
+#Lukashenko elected as USSR President
+news_event = {
+	id = tfrpr_news.10
+	title = tfrpr_news.10.t
+	desc = tfrpr_news.10.d
+	picture = GFX_lukashenko_president
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.10.a
+	}
+}
+
+#Grudinin elected as USSR President
+news_event = {
+	id = tfrpr_news.11
+	title = tfrpr_news.11.t
+	desc = tfrpr_news.11.d
+	picture = GFX_USSR_grudinin_elected
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.11.a
+	}
+}
+
+#Rashkin retained role as USSR leader
+news_event = {
+	id = tfrpr_news.12
+	title = tfrpr_news.12.t
+	desc = tfrpr_news.12.d
+	picture = GFX_rashkin_premiership
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.12.a
+	}
+}
+
+#Solovyov elected as USSR President
+news_event = {
+	id = tfrpr_news.13
+	title = tfrpr_news.13.t
+	desc = tfrpr_news.13.d
+	picture = GFX_solovyov_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.13.a
+	}
+}
+
+#Navalny elected as USSR President
+news_event = {
+	id = tfrpr_news.14
+	title = tfrpr_news.14.t
+	desc = tfrpr_news.14.d
+	picture = GFX_soviet_navalny_elected
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.14.a
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.14.b
+		trigger = {
+			tag = USB
+		}
+	}
+	option = {
+		name = tfrpr_news.14.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = tfrpr_news.14.b
+		trigger = {
+			tag = APA
+		}
+	}
+	option = {
+		name = tfrpr_news.14.b
+		trigger = {
+			tag = PTF
+		}
+	}
+	option = {
+		name = tfrpr_news.14.b
+		trigger = {
+			tag = FAF
+		}
+	}
+}
+
+#Dean Philips inaugurates
+news_event = {
+	id = tfrpr_news.15
+	title = tfrpr_news.15.t
+	desc = tfrpr_news.15.d
+	picture = GFX_dean_philips_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.15.a
+	}
+}
+
+#Don Bacon
+news_event = {
+	id = tfrpr_news.16
+	title = tfrpr_news.16.t
+	desc = tfrpr_news.16.d
+	picture = GFX_don_bacon_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.15.a
+	}
+}
+
+#RFK Jr. inaugurated for the second time
+news_event = {
+	id = tfrpr_news.16
+	title = tfrpr_news.16.t
+	desc = tfrpr_news.16.d
+	picture = GFX_rfk_second_term
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.16.a
+	}
+}
+
+#O'Rourke inaugurated for the second time
+news_event = {
+	id = tfrpr_news.17
+	title = tfrpr_news.17.t
+	desc = tfrpr_news.17.d
+	picture = GFX_beto_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.17.a
+	}
+}
+
+#Yang inaugurates for the second time
+news_event = {
+	id = tfrpr_news.18
+	title = tfrpr_news.18.t
+	desc = tfrpr_news.18.d
+	picture = GFX_andrew_yang_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.18.a
+	}
+}
+
+#Buttigieg as 2nd term
+news_event = {
+	id = tfrpr_news.19
+	title = tfrpr_news.19.t
+	desc = tfrpr_news.19.d
+	picture = GFX_buttigieg_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   USB_buttigieg_second_term_flag
+	}
+	option = {
+		name = tfrpr_news.19.a
+	}
+}
+
+#Nikki Haley's first/second term as POTUS
+news_event = {
+	id = tfrpr_news.20
+	title = tfrpr_news.20.t
+	desc = tfrpr_news.20.d
+	picture = GFX_nikki_haley_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_never_trumper_romney_haley_second_term_flag
+	}
+	option = {
+		name = tfrpr_news.20.a
+	}
+}
+
+#Klobuchar wins for the second time
+news_event = {
+	id = tfrpr_news.21
+	title = tfrpr_news.21.t
+	desc = tfrpr_news.21.d
+	picture = GFX_amy_klobuchar_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_amy_klobuchar_2028_flag
+	}
+	option = {
+		name = tfrpr_news.21.a
+	}
+}
+
+#AOC inaugurated
+news_event = {
+	id = tfrpr_news.22
+	title = tfrpr_news.22.t
+	desc = tfrpr_news.22.d
+	picture = GFX_aoc_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    set_global_flag = USB_aoc_heirs_to_bernie_presidency_flag
+	}
+	option = {
+		name = tfrpr_news.22.a
+	}
+}
+#Gretchen Whitmer inaugurated
+news_event = {
+	id = tfrpr_news.23
+	title = tfrpr_news.23.t
+	desc = tfrpr_news.23.d
+	picture = GFX_gretchen_whitmer_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_whitmer_president_flag
+	}
+	option = {
+		name = tfrpr_news.23.a
+	}
+}
+
+#Andy Beshear as POTUS
+news_event = {
+	id = tfrpr_news.24
+	title = tfrpr_news.24.t
+	desc = tfrpr_news.24.d
+	picture = GFX_andy_beshear_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_beshear_president_flag
+	}
+	option = {
+		name = tfrpr_news.24.a
+	}
+}
+
+#Stephen A. Smith Inaugurates
+news_event = {
+	id = tfrpr_news.25
+	title = tfrpr_news.25.t
+	desc = tfrpr_news.25.d
+	picture = GFX_stephen_smith_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_stephen_a_smith_president_flag
+	}
+	option = {
+		name = tfrpr_news.25.a
+	}
+}
+
+#Mitt Romney Second Term
+news_event = {
+	id = tfrpr_news.26
+	title = tfrpr_news.26.t
+	desc = tfrpr_news.26.d
+	picture = GFX_romney_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_never_trumper_romney_haley_second_term_flag
+	}
+	option = {
+		name = tfrpr_news.26.a
+	}
+}
+
+#Taylor for President
+news_event = {
+	id = tfrpr_news.27
+	title = tfrpr_news.27.t
+	desc = tfrpr_news.27.d
+	picture = GFX_president_taylor
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_taylor_swift_presidency_flag
+	}
+	option = {
+		name = tfrpr_news.27.a
+		trigger = {
+			NOT = {
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.27.b
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = {
+		name = tfrpr_news.27.c
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = tfrpr_news.27.d
+		trigger = {
+			tag = FAF
+		}
+	}
+}
+
+#Dwayne Johnson Inaugurated
+news_event = {
+	id = tfrpr_news.28
+	title = tfrpr_news.28.t
+	desc = tfrpr_news.28.d
+	picture = GFX_the_rock_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   set_global_flag = USB_dwayne_johnson_white_house_flag
+	}
+	option = {
+		name = tfrpr_news.28.a
+	}
+}
+
+#Harris Second Term
+news_event = {
+	id = tfrpr_news.29
+	title = tfrpr_news.29.t
+	desc = tfrpr_news.29.d
+	picture = GFX_harris_second_term
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	   has_global_flag = USB_kamala_harris_second_term_flag
+	}
+	option = {
+		name = tfrpr_news.29.a
+	}
+}
+
+#Salazar First Term
+news_event = {
+	id = tfrpr_news.30
+	title = tfrpr_news.30.t
+	desc = tfrpr_news.30.d
+	picture = GFX_salazar_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.30.a
+	}
+}
+
+#Solidarity First Term
+news_event = {
+	id = tfrpr_news.31
+	title = tfrpr_news.31.t
+	desc = tfrpr_news.31.d
+	picture = GFX_sonski_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.31.a
+	}
+}
+
+#Crenshaw inaugurates
+news_event = {
+	id = tfrpr_news.32
+	title = tfrpr_news.32.t
+	desc = tfrpr_news.32.d
+	picture = GFX_dan_crenshaw_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.32.a
+	}
+}
+
+#Sununu inaugurates
+news_event = {
+	id = tfrpr_news.33
+	title = tfrpr_news.33.t
+	desc = tfrpr_news.33.d
+	picture = GFX_sununu_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.33.a
+	}
+}
+
+#Youngkin inaugurates
+news_event = {
+	id = tfrpr_news.34
+	title = tfrpr_news.34.t
+	desc = tfrpr_news.34.d
+	picture = GFX_youngkin_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.34.a
+	}
+}
+
+#Cheney inaugurates
+news_event = {
+	id = tfrpr_news.35
+	title = tfrpr_news.35.t
+	desc = tfrpr_news.35.d
+	picture = GFX_liz_cheney_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.35.a
+	}
+}
+
+#Meyers inauguration
+news_event = {
+	id = tfrpr_news.36
+	title = tfrpr_news.36.t
+	desc = tfrpr_news.36.d
+	picture = GFX_meyers_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.36.a
+	}
+}
+
+#Pritzker inaugurated
+news_event = {
+	id = tfrpr_news.37
+	title = tfrpr_news.37.t
+	desc = tfrpr_news.37.d
+	picture = GFX_jb_pritzker_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.37.a
+	}
+}
+
+#Cuban inauguration
+news_event = {
+	id = tfrpr_news.38
+	title = tfrpr_news.38.t
+	desc = tfrpr_news.38.d
+	picture = GFX_mark_cuban
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.38.a
+	}
+}
+
+#Paul Ryan inauguration
+news_event = {
+	id = tfrpr_news.39
+	title = tfrpr_news.39.t
+	desc = tfrpr_news.39.d
+	picture = GFX_paul_ryan_inaugurated
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.39.a
+	}
+}
+
+#Josh Shapiro inauguration as POTUS
+news_event = {
+	id = tfrpr_news.40
+	title = tfrpr_news.40.t
+	desc = tfrpr_news.40.d
+	picture = GFX_shapiro_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.40.a
+	}
+}
+
+#LeBron inauguration
+news_event = {
+	id = tfrpr_news.41
+	title = tfrpr_news.41.t
+	desc = tfrpr_news.41.d
+	picture = GFX_lebron_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.41.a
+	}
+}
+
+#Kinzinger inauguration
+news_event = {
+	id = tfrpr_news.42
+	title = tfrpr_news.42.t
+	desc = tfrpr_news.42.desc
+	picture = GFX_kinzinger_inauguration
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.42.a
+	}
+}
+
+#Navalny got shot! End of the Second European War!
+#news_event = {
+#	id = tfrpr_news.43
+#	title = tfrpr_news.43.t
+#	desc = tfrpr_news.43.d
+#	picture = GFX_navalny_dead
+#	is_triggered_only = yes
+#	major = yes
+#	trigger = {
+#	    has_global_flag = second_nato_war_flag
+#	}
+#	option = {
+#		name = tfrpr_news.43.a
+#		trigger = {
+#		   tag = SOV
+#		}
+#		complete_effect = {
+#			custom_effect_tooltip = SOV_second_european_war_soviet_surrender_tt
+#			remove_mission = SOV_second_euro_war_exhaustion
+#			SOV_USSR_defeat_in_2nd_European_War = yes
+#		}
+#	}
+#	option = {
+#	    name = tfrpr_news.43.b
+#		trigger = {
+#		   tag = GER
+#		}
+#	}
+#	option = {
+#	    name = tfrpr_news.43.c
+#		trigger = {
+#		   tag = USB
+#		}
+#	}
+#	option = {
+#	    name = tfrpr_news.43.d
+#		trigger = {
+#		   tag = APA
+#		}
+#	}
+#}
+
+#Pact of Steel Collapses
+news_event = {
+	id = tfrpr_news.44
+	title = tfrpr_news.44.t
+	desc = tfrpr_news.44.d
+	picture = GFX_aachen_conference
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.40.a
+	}
+}
+
+#Atlantic War - Germany vs UoA
+news_event = {
+	id = tfrpr_news.45
+	title = tfrpr_news.45.t
+	desc = tfrpr_news.45.d
+	picture = GFX_atlantic_war_pact_of_steel
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_flag
+	}
+	option = {
+		name = tfrpr_news.45.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_pos_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_pos
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - Lafayette vs UoA/APLA/ACG
+news_event = {
+	id = tfrpr_news.46
+	title = tfrpr_news.46.t
+	desc = tfrpr_news.46.d
+	picture = GFX_atlantic_war_lafayette
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_flag
+	}
+	option = {
+		name = tfrpr_news.46.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_lafayette_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_lafayette
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - Germany wins
+news_event = {
+	id = tfrpr_news.47
+	title = tfrpr_news.47.t
+	desc = tfrpr_news.47.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_defeat
+	}
+	option = {
+		name = tfrpr_news.47.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_germany_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_germany_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - Lafayette wins
+news_event = {
+	id = tfrpr_news.48
+	title = tfrpr_news.48.t
+	desc = tfrpr_news.44.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_defeat
+	}
+	option = {
+		name = tfrpr_news.48.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_lafayette_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_lafayette_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - UoA wins
+news_event = {
+	id = tfrpr_news.49
+	title = tfrpr_news.49.t
+	desc = tfrpr_news.49.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.49.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_uoa_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_uoa_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - UoA losses
+news_event = {
+	id = tfrpr_news.50
+	title = tfrpr_news.50.t
+	desc = tfrpr_news.50.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    tag = USB
+	    has_global_flag = atlantic_war_american_defeat
+	}
+	option = {
+		name = tfrpr_news.50.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+					tag = USB
+				}
+				set_country_flag = atlantic_war_uoa_defeat_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_uoa_defeat
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - APLA wins neosoc
+news_event = {
+	id = tfrpr_news.51
+	title = tfrpr_news.51.t
+	desc = tfrpr_news.51.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.51.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_apla_neosoc_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_apla_neosoc_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - APLA wins ocotberist
+news_event = {
+	id = tfrpr_news.52
+	title = tfrpr_news.52.t
+	desc = tfrpr_news.52.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.52.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_apla_octoberist_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_apla_octoberist_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - APLA wins
+news_event = {
+	id = tfrpr_news.53
+	title = tfrpr_news.53.t
+	desc = tfrpr_news.53.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.53.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_apla_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_apla_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - Patriot Front wins
+news_event = {
+	id = tfrpr_news.54
+	title = tfrpr_news.54.t
+	desc = tfrpr_news.54.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.54.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_patriot_front_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_patriot_front_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - NSM wins
+news_event = {
+	id = tfrpr_news.55
+	title = tfrpr_news.55.t
+	desc = tfrpr_news.55.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.55.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_nsm_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_nsm_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - ACG wins
+news_event = {
+	id = tfrpr_news.56
+	title = tfrpr_news.56.t
+	desc = tfrpr_news.56.d
+	picture = GFX_victory_march_berlin
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_american_victory
+	}
+	option = {
+		name = tfrpr_news.56.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_acg_victory_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_acg_victory
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Atlantic War - Communist Germany vs UoA/ACG/PTF
+news_event = {
+	id = tfrpr_news.57
+	title = tfrpr_news.57.t
+	desc = tfrpr_news.57.d
+	picture = GFX_atlantic_war_european_internationale
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    has_global_flag = atlantic_war_communist_flag
+	}
+	option = {
+		name = tfrpr_news.57.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = atlantic_war_eurointern_se_flag
+				scoped_sound_effect = TFR_se_atlantic_war_eurointern
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
+	}
+}
+
+#Neo-Petainists Proclaim Junta
+news_event = {
+	id = tfrpr_news.58
+	title = tfrpr_news.58.t
+	desc = tfrpr_news.58.d
+	picture = GFX_FRA_vichy_comeback
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	    trigger = {
+			NOT = {
+				original_tag = FAF
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.58.a
+	}
+}
+
+#Evropa forms with Camus as leader
+news_event = {
+	id = tfrpr_news.59
+	title = tfrpr_news.59.t
+	desc = tfrpr_news.59.d
+	picture = GFX_Europa_gaming_mode
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+		NOT = {
+				original_tag = FAF
+				OR = {
+					has_country_leader = {
+						name = "FAF_Renaud_Camus_char"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+	option = {
+		name = tfrpr_news.59.a
+	}
+	option = {
+		name = tfrpr_news.59.b
+		trigger = {
+		    tag = FAF
+		}
+	}
+	option = {
+		name = tfrpr_news.59.c
+		trigger = {
+		    tag = GER
+		}
+	}
+}
+
+#Ancien regime returns back from the dead
+news_event = {
+	id = tfrpr_news.60
+	title = tfrpr_news.60.t
+	desc = tfrpr_news.60.d
+	picture = GFX_french_kingdom_revived
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+			NOT = {
+				original_tag = FAF
+				OR = {
+					has_country_leader = {
+						name = "FRA_Louis_XX_char"
+						ruling_only = yes
+					}
+				}
+			}
+	}
+	option = {
+		name = tfrpr_news.60.a
+	}
+	option = {
+		name = tfrpr_news.60.b
+		trigger = {
+		    tag = FAF
+		}
+	}
+	option = {
+		name = tfrpr_news.60.c
+		trigger = {
+		    tag = GER
+		}
+	}
+}
+
+#Navalny gets couped
+news_event = {
+	id = tfrpr_news.61
+	title = tfrpr_news.61.t
+	desc = tfrpr_news.61.d
+	picture = GFX_soviet_tanks_moscow
+	is_triggered_only = yes
+	major = yes
+	trigger = {
+	}
+	option = {
+		name = tfrpr_news.61.a
+		trigger = {
+			NOT = {
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = tfrpr_news.61.b
+		trigger = {
+			tag = SOV
+		}
+	}
+}
